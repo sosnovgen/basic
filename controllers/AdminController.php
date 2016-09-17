@@ -14,5 +14,10 @@ class AdminController extends Controller
         return $this->render('dashboard');
 
     }
+    public function actionCreate()
+    {
+        return $this->render('dashboard');
+
+    }
 
 }

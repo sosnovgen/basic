@@ -5,12 +5,15 @@ use yii\db\ActiveRecord;
 
 class Category extends ActiveRecord
 {
-
+    
     public function rules()
     {
         return [
             [['title'], 'required'],
+            [['preview'], 'file'],
 
         ];
+    
     }
+    
 }

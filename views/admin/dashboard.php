@@ -67,10 +67,10 @@ $this->title = 'admin panel';
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <form method="POST" action="<?php echo Url::to(['category/add'])?>" class="form-group" enctype="multipart/form-data"/>
+                    <form method="POST" action="<?php echo Url::to(['category/create'])?>" class="form-group" enctype="multipart/form-data"/>
                     <div class="col-xs-4">
                         <label for="ex3">Название категории</label>
-                        <input class="form-control" name="name" id="ex3" type="text">
+                        <input class="form-control" name="Category[title]" id="ex3" type="text">
                         <br>
 
                         <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />

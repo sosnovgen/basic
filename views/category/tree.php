@@ -1,7 +1,11 @@
+<?php
+use yii\helpers\Html;
+?>
+<p>Вы ввели следующую информацию:</p>
+
 <ul>
-    <?php foreach ($tests as $test): ?>
-        <li>
-            <?= $test->title ?>
-        </li>
-    <?php endforeach; ?>
+    <li><label>Категория</label>: <?= Html::encode($test->title) ?></li>
+
+    <?php var_dump($test); ?>
+
 </ul>
