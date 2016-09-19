@@ -8,8 +8,8 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'title') ?>
-    <?= $form->field($model, 'preview')->fileInput() ?>
+    <?= $form->field($model, 'title')->textInput()->label('Категория'); ?>
+    <?= $form->field($model, 'preview')->fileInput()->label('Картинка'); ?>
 
     <div class="form-group">
         <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>

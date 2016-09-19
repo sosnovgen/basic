@@ -7,17 +7,14 @@ use yii\web\Controller;
 
 class AdminController extends Controller
 {
-    public $layout = 'admin';
+    //public $layout = 'admin';
+    public $layout = 'bootsnip';
     
     public function actionView()
     {
         return $this->render('dashboard');
 
     }
-    public function actionCreate()
-    {
-        return $this->render('dashboard');
 
-    }
 
 }
