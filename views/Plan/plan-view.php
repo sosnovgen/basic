@@ -1,12 +1,14 @@
 <?php
-use yii\helpers\Html;
+use yii\data\ActiveDataProvider;
+use \yii\grid\GridView;
 ?>
 
-<p>Вы ввели следующую информацию:</p>
 
-<ul>
-    <li><label>Категория</label>: <?= Html::encode($model->title) ?></li>
-    <li><label>Просмотр</label>: <?= Html::encode($model->preview) ?></li>
-    <?php var_dump($model); ?>
+<?php
 
-</ul>
+    echo GridView::widget([
+    'dataProvider' => $dataProvider,
+    
+    ]);
+
+?>
