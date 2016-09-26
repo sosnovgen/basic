@@ -25,7 +25,7 @@ class PlanController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate())  {
 
             $fileName = UploadedFile::getInstance($model, 'preview');
-
+            if (!$fileName){$fileName ='Null.jpg';}
             $img_root = 'images/lessons/';
 
             $model -> preview = $fileName;
@@ -37,7 +37,14 @@ class PlanController extends Controller
             $img->resize(300, 200);
             $img->save($img_root. $fileName);
 
-            return $this->render('plan-view', ['model' => $model,]);
+            $dataProvider = new ActiveDataProvider([
+                'query' => Plan::find(),
+                'pagination' => [
+                    'pageSize' => 20,
+                ],
+            ]);
+
+            return $this->render('plan-view', ['model' => $model, 'dataProvider' => $dataProvider,]);
         }
         else {
             // либо страница отображается первый раз, либо есть ошибка в данных
