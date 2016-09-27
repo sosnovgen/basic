@@ -30,10 +30,10 @@ use yii\widgets\ActiveForm;
     </div>
 
 
-        <?= $form->field($model, 'content')-> textArea(['rows' => '6']) -> label('Программа обучения'); ?>
-    
-    
-    
+    <?= $form->field($model, 'content')-> textArea(['rows' => '6']) -> label('Программа обучения'); ?>
+
+
+
     <br>
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>

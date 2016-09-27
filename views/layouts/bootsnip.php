@@ -77,13 +77,13 @@ AppAsset::register($this);
                     <li class="active"><a href="#">Home</a></li>
                     <h3>Занятия</h3>
                     <ul class="list-group">
-                        <li class="list-group-item"><a href="<?php echo Url::to(['category/create','id' => 'five'])?>" >Расписание</a></li>
-                        <li class="list-group-item"><a href="#" >Добавить/Изменить</a></li>
+                        <li class="list-group-item"><a href="<?php echo Url::to(['plan/view'])?>" >Расписание</a></li>
+                        <li class="list-group-item"><a href="<?php echo Url::to(['plan/create'])?>" >Новая запись</a></li>
                     </ul>
 
                     <h3>Категории</h3>
                     <ul class="list-group">
-                        <li  class="list-group-item"><a href="<?php echo Url::to(['test/view','id' => 'one'])?>">Все категории</a></li>
+                        <li  class="list-group-item"><a href="<?php echo Url::to(['plan/view'])?>">Все категории</a></li>
                         <li  class="list-group-item"><a data-toggle="modal" href="#myModal">Добавить категорию</a></li>
                     </ul>
                 </ul>
