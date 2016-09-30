@@ -20,10 +20,16 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
         'css/admin.css',
+        'css/sb-admin.css',
+        'css/font-awesome.min.css',
+
+
+        
     ];
     public $js = [
         'js/tale.js',
-        'js/bootstrap-filestyle.min.js'
+        'js/bootstrap-filestyle.min.js',
+        
     ];
     public $depends = [
         'yii\web\YiiAsset',

@@ -9,7 +9,12 @@
 h1.page-header {
     margin-top: -5px;
 }
+#side-menu{
+  border: 1px solid #ddd;
+  border-radius:3px;
 
+
+}
 .sidebar {
     padding-left: 0;
 }

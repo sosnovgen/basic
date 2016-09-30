@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 
 <div class="col-md-8">
     <?php $form = ActiveForm::begin(); ?>
-
+<br>
     <div class="row">
         <div class="col-md-6">
             <?= $form->field($model, 'title')->textInput()->label('Название курса'); ?>

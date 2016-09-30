@@ -8,11 +8,11 @@ use yii\web\Controller;
 class AdminController extends Controller
 {
     //public $layout = 'admin';
-    public $layout = 'bootsnip';
+    public $layout = 'admin';
     
-    public function actionView()
+    public function actionIndex()
     {
-        return $this->render('dashboard');
+        return $this->redirect('plan/view');
 
     }
 

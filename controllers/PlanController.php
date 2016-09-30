@@ -15,7 +15,7 @@ use yii\web\NotFoundHttpException;
 
 class PlanController extends Controller
 {
-    public $layout = 'bootsnip';
+    public $layout = 'admin';
 
     public function actionCreate()
     {
@@ -70,6 +70,14 @@ class PlanController extends Controller
     public function actionDelete($id){
 
         $model = Plan::findOne($id);
+
+        $fileName = ($model -> preview);
+        //$fileName = mb_substr($fileName,1);
+        if (is_file($fileName))
+        {
+            unlink($fileName);
+        }
+
         $model -> delete();
         return $this->redirect('view');
     }

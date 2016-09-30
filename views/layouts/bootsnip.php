@@ -22,6 +22,15 @@ AppAsset::register($this);
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
         <title>admin panel</title>
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
         <?php $this->head() ?>
     </head>
     <body>
@@ -71,23 +80,94 @@ AppAsset::register($this);
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <div class="container-fluid main-container">
-            <div class="col-md-2 sidebar">
-                <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="#">Home</a></li>
-                    <h3>Занятия</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item"><a href="<?php echo Url::to(['plan/view'])?>" >Расписание</a></li>
-                        <li class="list-group-item"><a href="<?php echo Url::to(['plan/create'])?>" >Новая запись</a></li>
-                    </ul>
 
-                    <h3>Категории</h3>
-                    <ul class="list-group">
-                        <li  class="list-group-item"><a href="<?php echo Url::to(['plan/view'])?>">Все категории</a></li>
-                        <li  class="list-group-item"><a data-toggle="modal" href="#myModal">Добавить категорию</a></li>
+
+        <div class="col-md-2">
+        <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+
+                <li>
+                    <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Flot Charts</a>
+                        </li>
+                        <li>
+                            <a href="#">Morris.js Charts</a>
+                        </li>
                     </ul>
-                </ul>
-            </div>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-table fa-fw"></i> Tables</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Panels and Wells</a>
+                        </li>
+                        <li>
+                            <a href="#">Buttons</a>
+                        </li>
+
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#">Second Level Item</a>
+                        </li>
+                        <li>
+                            <a href="#">Second Level Item</a>
+                        </li>
+                        <li>
+                            <a href="#">Third Level <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="#">Third Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Third Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Third Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Third Level Item</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-third-level -->
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="blank.html">Blank Page</a>
+                        </li>
+                        <li>
+                            <a href="login.html">Login Page</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+</div>
+</div>
 
             <div class="col-md-10 content">
                 <div class="panel panel-default">
@@ -99,7 +179,7 @@ AppAsset::register($this);
                     </div>
                 </div>
             </div>
-        </div>
+
     </div>
 
             <footer>
