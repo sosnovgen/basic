@@ -5,6 +5,7 @@
 
 use yii\helpers\Url;
 use app\assets\AppAsset;
+use yii\helpers\Html;
 
 AppAsset::register($this);
 ?>
@@ -12,8 +13,11 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-    <title>Europe</title>
+    <title><?= Html::encode($this->title) ?></title>
     <meta charset="utf-8">
+    <?php Html::csrfMetaTags() ?>
+    <?php $this->head() ?>
+
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="<?php Url::home()?>stylesheets/foundation.min.css">
     <link rel="stylesheet" href="<?php Url::home()?>stylesheets/main.css">

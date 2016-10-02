@@ -60,7 +60,18 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this -> view-> title = 'Neil5Art';
+        $this -> view -> registerMetaTag([
+            'name' => 'description',
+            'content' => 'школа обучения маникюра'
+        ]);
+        $this -> view -> registerMetaTag([
+            'name' => 'keywords',
+            'content' => 'методика гель типсы'
+        ]);
+
         return $this->render('index');
+
     }
 
     /**

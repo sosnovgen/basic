@@ -30,6 +30,13 @@ h1.page-header {
 }
 
 /*------------ entry plan -------------*/
-.plan-entry{
+.capture{
+    color: #2a71d0;
 
+}
+.description{
+    flex: 1;
+    margin: 22px 14px 22px 14px;
+    padding: 0 10px;
+    border-left: 4px solid #bcdeff;
 }

@@ -59,7 +59,7 @@ AppAsset::register($this);  // $this represents the view object
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="javascript:;" data-toggle="collapse" data-target="#lisp"><i class="fa fa-fw fa-pencil"></i>  Уроки <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#lisp"><i class="fa fa-fw fa-edit"></i>  Уроки <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="lisp" class="collapse">
                             <li>
                                 <a href="<?php echo Url::toRoute('plan/view')?>"> Показать все</a>
@@ -70,7 +70,15 @@ AppAsset::register($this);  // $this represents the view object
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#lisp_2"><i class="fa fa-fw fa-pencil"></i>  2-я полоса <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="lisp_2" class="collapse">
+                            <li>
+                                <a href="<?php echo Url::toRoute('front/view')?>"> Показать все</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo Url::toRoute('front/create')?>"> Добавить новый</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>

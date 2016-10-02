@@ -6,7 +6,14 @@ use yii\widgets\ActiveForm;
 
 <div class="col-md-8">
     <?php $form = ActiveForm::begin(); ?>
-<br>
+
+
+    <div class="row capture">
+        <h3>Уроки</h3>
+    </div>
+
+    <br>
+
     <div class="row">
         <div class="col-md-6">
             <?= $form->field($model, 'title')->textInput()->label('Название курса'); ?>
@@ -43,4 +50,9 @@ use yii\widgets\ActiveForm;
 
 </div>
 
-<div class="col-md-4"></div>
+<div class="col-md-4">
+ <div class="description">
+    <p>Здесь можно добавить новый урок. Поле "Картинка" можно не  заполнять.
+    </p>
+ </div>
+</div>
