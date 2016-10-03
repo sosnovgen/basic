@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Front;
 
 class SiteController extends Controller
 {
@@ -70,15 +71,44 @@ class SiteController extends Controller
             'content' => 'методика гель типсы'
         ]);
 
-        return $this->render('index');
+        /*second row*/
+        $seconds = Front::find()
+            ->where(['group' => 'one_page_second_row'])-> orderBy('priznak')
+            ->all();
+        
+        
+        return $this->render('index',
+            [
+            'seconds' => $seconds,
+            
+            
+            
+            ]);
 
     }
 
-    /**
-     * Login action.
-     *
-     * @return string
-     */
+    public function actionTest() 
+    {
+        $seconds = Front::find()
+            ->where(['group' => 'one_page_second_row'])
+            ->all();
+
+        return $this->render('test',
+            [
+                'seconds' => $seconds,
+
+            ]);       
+     
+    
+        
+        
+        
+    }
+  
+    
+    
+    
+    
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {

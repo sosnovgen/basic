@@ -39,7 +39,7 @@ class FrontController extends Controller
         $searchModel = new FronttSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
+        return $this->render('view', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -50,11 +50,16 @@ class FrontController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id)
+    public function actionView()
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
+        $dataProvider = new ActiveDataProvider([
+            'query' => Front::find(),
+            'pagination' => [
+                'pageSize' => 20,
+            ],
         ]);
+
+        return $this->render('view', ['dataProvider' => $dataProvider,]);
     }
 
     /**
@@ -96,7 +101,7 @@ class FrontController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('update', [
+            return $this->render('create', [
                 'model' => $model,
             ]);
         }

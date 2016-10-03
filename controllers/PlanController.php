@@ -45,7 +45,11 @@ class PlanController extends Controller
                 ],
             ]);
 
-            return $this->render('plan-view', ['model' => $model, 'dataProvider' => $dataProvider,]);
+            return $this->render('plan-view',
+                [
+                    'model' => $model,
+                    'dataProvider' => $dataProvider,
+                ]);
         }
         else {
             // либо страница отображается первый раз, либо есть ошибка в данных

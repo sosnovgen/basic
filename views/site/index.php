@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use yii\helpers\ArrayHelper;
 ?>
 
 <div class="show-for-large-up">
@@ -19,20 +20,21 @@ use yii\helpers\Url;
         <!-- end row -->
         <div class="row">
             <div class="three columns">
-                <h3>Adipiscing Elit</h3>
-                <p><span class="dropcap_green">1</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra, lacus id interdum ultrices, elit metus semper tellus, vel lacinia libero purus vitae risus. Integer a eros sit amet felis tincidunt commodo.</p>
+
+                <h3><?php echo ArrayHelper::getValue($seconds, '0.title'); ?></h3>
+                <p><span class="dropcap_green">1</span> <?php echo ArrayHelper::getValue($seconds, '0.content'); ?></p>
             </div>
             <div class="three columns">
-                <h3>Lectus Congue</h3>
-                <p><span class="dropcap_black">2</span> Vivamus tortor tellus, rutrum sit amet mollis vel, imperdiet consectetur orci. Mauris pharetra congue enim, et sagittis lectus congue ut. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                <h3><?php echo ArrayHelper::getValue($seconds, '1.title'); ?></h3>
+                <p><span class="dropcap_black">2</span> <?php echo ArrayHelper::getValue($seconds, '1.content'); ?></p>
             </div>
             <div class="three columns">
-                <h3>Gravida Pharetra</h3>
-                <p><span class="dropcap_black">3</span> Sed vitae nisi leo. Nulla tincidunt, turpis non gravida pharetra, diam sapien posuere massa, non luctus leo mauris at sapien. Donec ut fermentum eros. Vestibulum placerat dui sit amet quam.</p>
+                <h3><?php echo ArrayHelper::getValue($seconds, '2.title'); ?></h3>
+                <p><span class="dropcap_black">3</span> <?php echo ArrayHelper::getValue($seconds, '2.content'); ?></p>
             </div>
             <div class="three columns">
-                <h3>Gravida Pharetra</h3>
-                <p><span class="dropcap_black">4</span> Sed vitae nisi leo. Nulla tincidunt, turpis non gravida pharetra, diam sapien posuere massa, non luctus leo mauris at sapien. Donec ut fermentum eros. Vestibulum placerat dui sit amet quam.</p>
+                <h3><?php echo ArrayHelper::getValue($seconds, '3.title'); ?></h3>
+                <p><span class="dropcap_black">4</span> <?php echo ArrayHelper::getValue($seconds, '3.content'); ?></p>
             </div>
         </div>
         <!-- end row -->

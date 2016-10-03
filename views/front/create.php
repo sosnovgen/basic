@@ -25,9 +25,11 @@ use yii\widgets\ActiveForm;
         <div class="col-md-2">
         <?php echo $form->field($model, 'priznak')->dropDownList([
 
-            '1' => 'Активный',
-            '2' => 'Отключен',
-            '3' => 'Удален'
+            '1' => '1',
+            '2' => '2',
+            '3' => '3',
+            '4' => '4',
+            
             ])-> label('№ столб.'); ?>
 
         </div>

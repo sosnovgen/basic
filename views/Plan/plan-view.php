@@ -11,7 +11,8 @@ use yii\helpers\Html;
     echo GridView::widget([
     'dataProvider' => $dataProvider,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            /*['class' => 'yii\grid\SerialColumn'],*/
+            'id:text:id',
             'title:text:Название',
             'duration:text:Кол.часов',
             'content:text:Программа обучения',

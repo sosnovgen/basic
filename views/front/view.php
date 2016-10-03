@@ -14,6 +14,7 @@ echo GridView::widget([
         'id:text:id',
         'title:text:Заголовок',
         'content:text:Текст',
+        'group:text:Группа',
         'priznak:text:№ столбика',
         'created_at:date:Создано',
 
