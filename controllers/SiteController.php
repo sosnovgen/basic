@@ -73,7 +73,7 @@ class SiteController extends Controller
 
         /*second row*/
         $seconds = Front::find()
-            ->where(['group' => 'one_page_second_row'])-> orderBy('priznak')
+            ->where(['group' => 'one_page'])-> orderBy('priznak')
             ->all();
         
         
@@ -90,7 +90,7 @@ class SiteController extends Controller
     public function actionTest() 
     {
         $seconds = Front::find()
-            ->where(['group' => 'one_page_second_row'])
+            ->where(['group' => 'one_page'])
             ->all();
 
         return $this->render('test',

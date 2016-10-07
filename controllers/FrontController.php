@@ -9,6 +9,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\data\ActiveDataProvider;
+use yii\web\UploadedFile;
+// import the Intervention Image Manager Class
+use Intervention\Image\ImageManagerStatic as Image;
 
 /**
  * FrontController implements the CRUD actions for Front model.
@@ -69,9 +72,29 @@ class FrontController extends Controller
      */
     public function actionCreate()
     {
+        // configure with favored image driver (gd by default)
+        Image::configure(array('driver' => 'GD'));
+
         $model = new Front();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            $fileName = UploadedFile::getInstance($model, 'preview');
+
+            if ($fileName !== null) {
+                $img_root = 'images/one_page/';
+
+                $model->preview = $fileName;
+                $model->preview->saveAs($img_root . $fileName);
+                $model->preview = $img_root . $fileName;
+
+
+                $img = Image::make($img_root . $fileName);
+                $img->resize(450, 238);
+                $img->save($img_root . $fileName);
+            }
+            $model->save();
+
 
             $dataProvider = new ActiveDataProvider([
                 'query' => Front::find(),
@@ -97,8 +120,23 @@ class FrontController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            $fileName = UploadedFile::getInstance($model, 'preview');
+            if ($fileName !== null) {
+                $img_root = 'images/one_page/';
+
+                $model->preview = $fileName;
+                $model->preview->saveAs($img_root . $fileName);
+                $model->preview = $img_root . $fileName;
+
+                $img = Image::make($img_root . $fileName);
+                $img->resize(450, 238);
+                $img->save($img_root . $fileName);
+            }
+
+            $model->save();
+
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -115,9 +153,18 @@ class FrontController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = Front::findOne($id);
 
-        return $this->redirect(['index']);
+        $fileName = ($model -> preview);
+        //$fileName = mb_substr($fileName,1);
+        if (is_file($fileName))
+        {
+            unlink($fileName);
+        }
+
+        $model -> delete();
+
+        return $this->redirect('view');
     }
 
     /**

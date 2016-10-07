@@ -59,9 +59,9 @@ AppAsset::register($this);
         </div>
         <!-- END Header -->
 
-        <div class="container">
+
             <?= $content ?>
-        </div>
+        
 
 
         <div class="row">

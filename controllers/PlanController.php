@@ -26,17 +26,20 @@ class PlanController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate())  {
 
             $fileName = UploadedFile::getInstance($model, 'preview');
-            if (!$fileName){$fileName ='Null.jpg';}
-            $img_root = 'images/lessons/';
+            if ($fileName !== null) {
 
-            $model -> preview = $fileName;
-            $model -> preview -> saveAs($img_root.$fileName);
-            $model -> preview = $img_root.$fileName;
-            $model ->save();
+                $img_root = 'images/lessons/';
 
-            $img = Image::make($img_root. $fileName);
-            $img->resize(300, 200);
-            $img->save($img_root. $fileName);
+                $model->preview = $fileName;
+                $model->preview->saveAs($img_root . $fileName);
+                $model->preview = $img_root . $fileName;
+
+                $img = Image::make($img_root . $fileName);
+                $img->resize(300, 200);
+                $img->save($img_root . $fileName);
+            }
+
+            $model->save();
 
             $dataProvider = new ActiveDataProvider([
                 'query' => Plan::find(),
@@ -98,20 +101,24 @@ class PlanController extends Controller
     public function actionUpdate($id){
 
         $model = $this->findModel($id);
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-
+        
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            
             $fileName = UploadedFile::getInstance($model, 'preview');
-            if (!$fileName){$fileName ='Null.jpg';}
-            $img_root = 'images/lessons/';
+            if ($fileName !== null) {
+                $img_root = 'images/lessons/';
 
-            $model -> preview = $fileName;
-            $model -> preview -> saveAs($img_root.$fileName);
-            $model -> preview = $img_root.$fileName;
-            $model ->save();
+                $model->preview = $fileName;
+                $model->preview->saveAs($img_root . $fileName);
+                $model->preview = $img_root . $fileName;
 
-            $img = Image::make($img_root. $fileName);
-            $img->resize(300, 200);
-            $img->save($img_root. $fileName);
+                $img = Image::make($img_root . $fileName);
+                $img->resize(300, 200);
+                $img->save($img_root . $fileName);
+            }
+
+
+            $model->save();
 
             return $this->redirect(['view', 'id' => $model->id]);
         } else {

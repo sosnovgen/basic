@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 
 
     <div class="row capture">
-        <h3>Вторая полоса</h3>
+        <h3>Главная страница</h3>
     </div>
 
     <br>
@@ -29,13 +29,16 @@ use yii\widgets\ActiveForm;
             '2' => '2',
             '3' => '3',
             '4' => '4',
+            '5' => '5',
+            '6' => '6',
+            '7' => '7',
             
             ])-> label('№ столб.'); ?>
 
         </div>
     </div>
 
-    <?= $form->field($model, 'group')->hiddenInput(['value'=> 'one_page_second_row'])->label(false); ?>
+    <?= $form->field($model, 'group')->hiddenInput(['value'=> 'one_page'])->label(false); ?>
 
     <?= $form->field($model, 'content')-> textArea(['rows' => '6']) -> label('Текст'); ?>
 
@@ -52,8 +55,8 @@ use yii\widgets\ActiveForm;
 <div class="col-md-4">
     <div class="description">
         <p>Здесь можно добавить/отредактировать вторую полосу.</br>
-           "Номер столбца" - номер редактируемого столбца во второй полосе.</br>
-           Поле "Картинка" заполнять не нужно.
+           "Номер столбца" - номер редактируемого столбца на главной странице.</br>
+           Номера идут слева направо, сверху вниз.
         </p>
     </div>
 </div>

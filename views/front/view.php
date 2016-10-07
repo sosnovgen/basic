@@ -2,6 +2,7 @@
 use yii\data\ActiveDataProvider;
 use \yii\grid\GridView;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 ?>
 
@@ -12,6 +13,16 @@ echo GridView::widget([
     'columns' => [
         /*['class' => 'yii\grid\SerialColumn'],*/
         'id:text:id',
+        [
+            'label' => 'Картинка',
+            'format' => 'raw',
+            'value' => function($data){
+                return Html::img(Url::toRoute($data -> preview),[
+                    'alt'=>'',
+                    'style' => 'width:60px; height:40px;'
+                ]);
+            },
+        ],
         'title:text:Заголовок',
         'content:text:Текст',
         'group:text:Группа',

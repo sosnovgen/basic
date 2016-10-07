@@ -70,7 +70,7 @@ AppAsset::register($this);  // $this represents the view object
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#lisp_2"><i class="fa fa-fw fa-pencil"></i>  2-я полоса <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#lisp_2"><i class="fa fa-fw fa-pencil"></i> Гл.страница<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="lisp_2" class="collapse">
                             <li>
                                 <a href="<?php echo Url::toRoute('front/view')?>"> Показать все</a>
