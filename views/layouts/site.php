@@ -19,16 +19,17 @@ AppAsset::register($this);
     <?php $this->head() ?>
 
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="<?php Url::home()?>stylesheets/foundation.min.css">
-    <link rel="stylesheet" href="<?php Url::home()?>stylesheets/main.css">
-    <link rel="stylesheet" href="<?php Url::home()?>stylesheets/app.css">
-    <script src="<?php Url::home()?>javascripts/modernizr.foundation.js"></script>
+    <link rel="stylesheet" href="<?php echo Url::home()?>stylesheets/foundation.min.css">
+    <link rel="stylesheet" href="<?php echo Url::home()?>stylesheets/main.css">
+    <link rel="stylesheet" href="<?php echo Url::home()?>stylesheets/app.css">
+    <script src="<?php echo Url::home()?>javascripts/modernizr.foundation.js"></script>
     <!-- Google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
     <!-- IE Fix for HTML5 Tags -->
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -55,11 +56,12 @@ AppAsset::register($this);
                 </ul>
                 <script>$('ul#menu-header').nav-bar();</script>
             </div>
-            <div class="three columns header_logo"> <img src="<?php Url::home()?>images/logo.png" class="hide-for-small" alt=""> </div>
+            <div class="three columns header_logo"> <img src="<?php echo Url::home()?>images/logo.png" class="hide-for-small" alt=""> </div>
         </div>
         <!-- END Header -->
 
-
+        <a href="#"><img src="<?php echo Url::home()?>images/button.jpg" class="panel_slide"></a>
+        
             <?= $content ?>
         
 
@@ -76,9 +78,9 @@ AppAsset::register($this);
 </div>
 <!-- end page wrap) -->
 <!-- Included JS Files (Compressed) -->
-<script src="<?php Url::home()?>javascripts/foundation.min.js"></script>
+<script src="<?php echo Url::home()?>javascripts/foundation.min.js"></script>
 <!-- Initialize JS Plugins -->
-<script src="<?php Url::home()?>javascripts/app.js"></script>
+<script src="<?php echo Url::home()?>javascripts/app.js"></script>
 
 <?php $this->endBody() ?>
 </body>

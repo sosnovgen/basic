@@ -40,3 +40,43 @@ h1.page-header {
     padding: 0 10px;
     border-left: 4px solid #bcdeff;
 }
+
+/*------------ first page ---------------*/
+.dropcap_blue,
+.dropcap_yellow,
+.dropcap_red{
+    border-radius: 100px 100px 100px 100px;
+    display: block;
+    float: left;
+    font-size: 18px;
+    line-height: 35px;
+    margin: 4px 8px 0 0;
+    text-align: center;
+    width: 35px;
+}
+
+
+.dropcap_blue {background: #1a47c7; color: #FFF}
+.dropcap_red {background: #c7281e; color: #FFF}
+.dropcap_yellow {background: #e3b635; color: #FFF}
+
+.three a,.four a{
+    text-decoration: none;
+}
+
+/*------------------  panel  ---------------------*/
+
+.panel_slide{
+    display:block;
+    /*width:30px;*/
+   /* height:150px;*/
+    position:fixed;
+    right:0;
+    top:70%;
+    z-index: 99;
+
+}
+.panel_content{
+    width:200px;
+     height:300px;
+}

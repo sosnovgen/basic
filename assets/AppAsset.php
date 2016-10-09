@@ -22,14 +22,15 @@ class AppAsset extends AssetBundle
         'css/admin.css',
         'css/sb-admin.css',
         'css/font-awesome.min.css',
-
-
         
+
     ];
     public $js = [
         'js/tale.js',
         'js/bootstrap-filestyle.min.js',
         
+
+
     ];
     public $depends = [
         'yii\web\YiiAsset',

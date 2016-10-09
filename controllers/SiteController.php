@@ -98,15 +98,9 @@ class SiteController extends Controller
                 'seconds' => $seconds,
 
             ]);       
-     
-    
-        
-        
-        
+
     }
-  
-    
-    
+
     
     
     public function actionLogin()
@@ -163,4 +157,20 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    /*------------ detal information ---------------*/
+    public function actionDetal($id)
+    {
+        $detal = Front::findOne($id);
+
+        return $this->render('detal',
+            [
+                'detal' => $detal,
+
+            ]);
+
+    }
+
+
+
 }

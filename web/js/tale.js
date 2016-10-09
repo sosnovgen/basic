@@ -1,3 +1,24 @@
-/**
- * Created by Юра on 06.09.2016.
- */
+$(document).ready(function(){
+    $('.panel_slide').click(function (event) {
+        event.preventDefault();
+
+        $(this).animate({right: "-250px"}, 500);
+
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});

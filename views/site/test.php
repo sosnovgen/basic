@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\ArrayHelper;
 ?>
-    <h1>Test</h1>
+<h1>Test</h1>
 
 
 
@@ -17,6 +17,6 @@ use yii\helpers\ArrayHelper;
 
       $second = $seconds[1];
       echo $second['title'];*/
-    //  var_dump($seconds);
+    var_dump($seconds);
 
-     ?></p>
+    ?></p>
