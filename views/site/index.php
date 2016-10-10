@@ -2,6 +2,7 @@
 use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
 use yii\helpers\StringHelper;
+use yii\widgets\ActiveForm;
 ?>
 
 
@@ -88,7 +89,9 @@ use yii\helpers\StringHelper;
     </div>
 </div>
 <!-- end row -->
+
 <hr/>
+
 <div class="row" style="padding-top: 20px">
 
     <div class="four columns">
@@ -97,7 +100,7 @@ use yii\helpers\StringHelper;
         $t8 = ArrayHelper::getValue($seconds, '4.id');
         echo Url::toRoute(['site/detal', 'id' => $t8])
         ?>">
-            <img src="<?php Url::home(); echo ArrayHelper::getValue($seconds, '4.preview'); ?>" alt="">
+            <img src="<?php echo Url::home(); echo ArrayHelper::getValue($seconds, '4.preview'); ?>" alt="">
             <h3><?php echo ArrayHelper::getValue($seconds, '4.title'); ?></h3>
             <p><em>
                     <?php
@@ -114,7 +117,7 @@ use yii\helpers\StringHelper;
         $t8 = ArrayHelper::getValue($seconds, '6.id');
         echo Url::toRoute(['site/detal', 'id' => $t8])
         ?>">
-            <img src="<?php Url::home(); echo ArrayHelper::getValue($seconds, '5.preview'); ?>" alt="">
+            <img src="<?php echo Url::home(); echo ArrayHelper::getValue($seconds, '5.preview'); ?>" alt="">
             <h3><?php echo ArrayHelper::getValue($seconds, '5.title'); ?></h3>
             <p><em>
                     <?php
@@ -131,7 +134,7 @@ use yii\helpers\StringHelper;
         $t8 = ArrayHelper::getValue($seconds, '6.id');
         echo Url::toRoute(['site/detal', 'id' => $t8])
         ?>">
-            <img src="<?php Url::home(); echo ArrayHelper::getValue($seconds, '6.preview'); ?>" alt="">
+            <img src="<?php echo Url::home(); echo ArrayHelper::getValue($seconds, '6.preview'); ?>" alt="">
             <h3><?php echo ArrayHelper::getValue($seconds, '6.title'); ?></h3>
             <p><em>
                     <?php
@@ -143,6 +146,7 @@ use yii\helpers\StringHelper;
     </div>
 </div>
 <!-- end row -->
+
 
 
 

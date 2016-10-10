@@ -6,6 +6,8 @@
 use yii\helpers\Url;
 use app\assets\AppAsset;
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+use yii\bootstrap\Alert;
 
 AppAsset::register($this);
 ?>
@@ -60,11 +62,12 @@ AppAsset::register($this);
         </div>
         <!-- END Header -->
 
-        <a href="#"><img src="<?php echo Url::home()?>images/button.jpg" class="panel_slide"></a>
         
-            <?= $content ?>
-        
+        <?php Alert::widget() ?>
 
+        <?= $content ?>
+
+        <a data-toggle="modal" href="#myModal"><img src="<?php echo Url::home()?>images/button.jpg" class="panel_slide"></a>
 
         <div class="row">
             <div class="twelve columns">
@@ -76,6 +79,53 @@ AppAsset::register($this);
         <script>$('ul#menu3').nav-bar();</script>
     </div>
 </div>
+
+<!-- Modal Categories Create -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Записаться на курс</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <?php $model = $this->params['model']; ?>
+                    
+                    <?php $form = ActiveForm::begin(
+                        [
+                            'action' => ['site/create'],
+                            'options' => ['method' => 'post'],
+                        ]
+                    ); ?>
+
+                    <div class="col-xs-4">
+                        <?= $form->field($model, 'name')->textInput()->label('Имя'); ?>
+                        <?= $form->field($model, 'phone')->textInput()->label('Телефон'); ?>
+                        <?= $form->field($model, 'curs')->textInput()->label('Название курса'); ?>
+                        <?= $form->field($model, 'content')-> textArea(['rows' => '6']) -> label('Текст'); ?>
+
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-default">Сохранить</button>
+            </div>
+
+            <?php ActiveForm::end(); ?>
+
+        </div>
+
+    </div>
+</div>
+
+
 <!-- end page wrap) -->
 <!-- Included JS Files (Compressed) -->
 <script src="<?php echo Url::home()?>javascripts/foundation.min.js"></script>

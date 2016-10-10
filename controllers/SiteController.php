@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Front;
+use app\models\Order;
 
 class SiteController extends Controller
 {
@@ -75,14 +76,14 @@ class SiteController extends Controller
         $seconds = Front::find()
             ->where(['group' => 'one_page'])-> orderBy('priznak')
             ->all();
-        
+
+        $model = new Order();
+        $this->view->params['model'] = $model;
         
         return $this->render('index',
             [
             'seconds' => $seconds,
-            
-            
-            
+
             ]);
 
     }
@@ -166,11 +167,29 @@ class SiteController extends Controller
         return $this->render('detal',
             [
                 'detal' => $detal,
-
             ]);
-
     }
 
+    public function actionCreate()
+    {
 
+        $seconds = Front::find()
+            ->where(['group' => 'one_page'])-> orderBy('priznak')
+            ->all();
+
+        $model = new Order();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            // данные в $model удачно проверены
+            $model ->save();
+
+            Yii::$app->session->setFlash('success', 'Запись сохранена!');
+            return $this->redirect('index');
+        }
+        else {
+            // Error
+            Yii::$app->session->setFlash('error', 'Ошибка! Проверьте правильность заполнения формы.');
+            return $this->redirect('index');
+        }
+    }
 
 }
