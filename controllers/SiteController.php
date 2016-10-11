@@ -77,8 +77,8 @@ class SiteController extends Controller
             ->where(['group' => 'one_page'])-> orderBy('priznak')
             ->all();
 
-        $model = new Order();
-        $this->view->params['model'] = $model;
+        $model2 = new Order();
+        $this->view->params['model2'] = $model2;
         
         return $this->render('index',
             [
@@ -162,6 +162,10 @@ class SiteController extends Controller
     /*------------ detal information ---------------*/
     public function actionDetal($id)
     {
+
+        $model2 = new Order();
+        $this->view->params['model2'] = $model2;
+        
         $detal = Front::findOne($id);
 
         return $this->render('detal',

@@ -62,8 +62,12 @@ AppAsset::register($this);
         </div>
         <!-- END Header -->
 
-        
-        <?php Alert::widget() ?>
+        <?php if (Yii::$app ->session ->hasFlash('success')){echo '<div class="alert alert-info fade in">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <strong>' . Yii::$app ->session ->getFlash('success') .'</strong></div>';}
+        ?>
+
+
 
         <?= $content ?>
 
@@ -92,7 +96,7 @@ AppAsset::register($this);
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <?php $model = $this->params['model']; ?>
+                    <?php $model2 = $this->params['model2']; ?>
                     
                     <?php $form = ActiveForm::begin(
                         [
@@ -102,10 +106,10 @@ AppAsset::register($this);
                     ); ?>
 
                     <div class="col-xs-4">
-                        <?= $form->field($model, 'name')->textInput()->label('Имя'); ?>
-                        <?= $form->field($model, 'phone')->textInput()->label('Телефон'); ?>
-                        <?= $form->field($model, 'curs')->textInput()->label('Название курса'); ?>
-                        <?= $form->field($model, 'content')-> textArea(['rows' => '6']) -> label('Текст'); ?>
+                        <?= $form->field($model2, 'name')->textInput()->label('Имя'); ?>
+                        <?= $form->field($model2, 'phone')->textInput()->label('Телефон'); ?>
+                        <?= $form->field($model2, 'curs')->textInput()->label('Название курса'); ?>
+                        <?= $form->field($model2, 'content')-> textArea(['rows' => '6']) -> label('Текст'); ?>
 
                         <br>
 
