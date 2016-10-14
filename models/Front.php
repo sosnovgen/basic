@@ -39,7 +39,7 @@ class Front extends \yii\db\ActiveRecord
             [['content'], 'string'],
             [['cena'], 'number'],
             [['created_at'], 'safe'],
-            [['title', 'group', 'priznak'], 'string', 'max' => 255],
+            [['title', 'group', 'duty', 'priznak'], 'string', 'max' => 255],
         ];
     }
 
@@ -63,6 +63,7 @@ class Front extends \yii\db\ActiveRecord
             'preview' => 'Просмотр',
             'group' => 'Группа',
             'content' => 'Содержимое',
+            'duty' => 'Длительность',
             'priznak' => 'Priznak',
             'cena' => 'Цена',
             'created_at' => 'Created At',

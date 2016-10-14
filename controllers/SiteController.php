@@ -10,6 +10,8 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Front;
 use app\models\Order;
+use app\models\Plan;
+
 
 class SiteController extends Controller
 {
@@ -196,4 +198,16 @@ class SiteController extends Controller
         }
     }
 
+    public function actionPrice()
+    {
+        $model2 = new Order();
+        $this->view->params['model2'] = $model2;
+
+        $model = Plan::find() ->all();
+
+        return $this->render('price', [
+            'model' => $model,]);
+    }
+    
+    
 }

@@ -1,3 +1,54 @@
 #toper{
     background-color: white;
 }
+
+/*-------- slider -------------*/
+
+#gallery_block{
+    width: 100%;
+    overflow:hidden;
+    white-space: nowrap;
+    position: relative;
+    cursor: grab;
+    cursor : -moz-grab;
+    cursor : -webkit-grab;
+
+}
+.block_price{
+    width: 200px;
+    height: 400px;
+    background-color: #f00;
+    display: inline-block;
+}
+
+#left_arrow a{
+    display:block;
+    /*width:30px;*/
+    /* height:150px;*/
+    position:absolute;
+    left:-40px;
+    z-index: 98;
+    top: calc( 45% );
+    opacity: 0;
+    transition: opacity 1s;
+}
+#left_arrow a:hover{
+    opacity: 1;
+
+}
+
+#right_arrow a{
+    display:block;
+    /*width:30px;*/
+    /* height:150px;*/
+    position:absolute;
+    right:-40px;
+    z-index: 98;
+    top: calc( 45% );
+    opacity: 0;
+    transition: opacity 1s;
+}
+#right_arrow a:hover{
+    opacity: 1;
+
+}

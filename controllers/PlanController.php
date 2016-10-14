@@ -116,8 +116,7 @@ class PlanController extends Controller
                 $img->resize(300, 200);
                 $img->save($img_root . $fileName);
             }
-
-
+            
             $model->save();
 
             return $this->redirect(['view', 'id' => $model->id]);
@@ -126,15 +125,8 @@ class PlanController extends Controller
                 'model' => $model,
             ]);
         }
-
-
-
-
     }
 
 
-
-
-
-
+    
 }

@@ -14,7 +14,6 @@ use yii\helpers\Url;
         'columns' => [
             /*['class' => 'yii\grid\SerialColumn'],*/
             'id:text:id',
-            'id:text:id',
             [
                 'label' => 'Картинка',
                 'format' => 'raw',

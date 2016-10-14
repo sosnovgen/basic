@@ -37,11 +37,8 @@ use yii\widgets\ActiveForm;
         </div>
 
     </div>
-
-
-    <?= $form->field($model, 'content')-> textArea(['rows' => '6']) -> label('Программа обучения'); ?>
-
-
+    
+    <?= $form->field($model, 'content')-> textArea(['rows' => '8']) -> label('Программа обучения'); ?>
 
     <br>
     <div class="form-group">
