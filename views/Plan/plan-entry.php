@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 ?>
-
+<button type="button" class="close" onclick="history.back();">&times;</button>
 <div class="col-md-8">
     <?php $form = ActiveForm::begin(); ?>
 
@@ -37,7 +37,8 @@ use yii\widgets\ActiveForm;
         </div>
 
     </div>
-    
+
+    <span class="small pull-right">* Перенос строки клавиши: Shift + Enter </span>
     <?= $form->field($model, 'content')-> textArea(['rows' => '8']) -> label('Программа обучения'); ?>
 
     <br>

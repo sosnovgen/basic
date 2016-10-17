@@ -4,8 +4,9 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 ?>
 
-
+<button type="button" class="close" onclick="history.back();">&times;</button>
 <div class="col-md-8">
+
     <?php $form = ActiveForm::begin(); ?>
 
 
@@ -40,7 +41,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'group')->hiddenInput(['value'=> 'one_page'])->label(false); ?>
 
-    <?= $form->field($model, 'content')-> textArea(['rows' => '6']) -> label('Текст'); ?>
+    <span class="small pull-right">* Перенос строки клавиши: Shift + Enter </span>
+    <?= $form->field($model, 'content')-> textArea(['rows' => '6','id' => 'editor']) -> label('Текст'); ?>
 
     <br>
 

@@ -10,21 +10,19 @@ $(document).ready(function(){
 
     })
 
-
-
-
+ 
     /*-------------  slider  ---------------*/
     $("#left_arrow").click(function () {
         event.preventDefault();
         var leftPos = $('#gallery_block').scrollLeft();
-        $("#gallery_block").animate({scrollLeft: leftPos - 200}, 500);
+        $("#gallery_block").animate({scrollLeft: leftPos - 230}, 500);
 
     });
 
     $("#right_arrow").click(function (event) {
         event.preventDefault();
         var leftPos = $('#gallery_block').scrollLeft();
-        $("#gallery_block").animate({scrollLeft: leftPos + 200}, 500);
+        $("#gallery_block").animate({scrollLeft: leftPos + 230}, 500);
 
     });
 
@@ -37,3 +35,4 @@ $(document).ready(function(){
     
     
 });
+

@@ -17,6 +17,31 @@ AppAsset::register($this);  // $this represents the view object
 
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
+
+        <script src="<?php echo Url::home()?>tinymce/tinymce.min.js"></script>
+        <script>
+            tinymce.init({
+                plugins: "image",
+                selector: '#editor',
+                selector: 'textarea',  // Ширина textarea
+                /*width : 800,*/
+                plugins: 'lists',
+                toolbar: 'lists',
+
+                mode : "textareas",
+                force_br_newlines : true,
+                /*force_br_newlines : false,*/
+                force_p_newlines : false,
+
+                toolbar: 'fontsizeselect | forecolor backcolor | bullist numlist |',
+                fontsize_formats: '8pt 9pt 10pt 11pt 12pt 14pt 16pt 18pt 24pt 36pt',
+                plugins: 'textcolor',
+
+            });
+        </script>
+
+
+
     </head>
     <body>
     <?php $this->beginBody() ?>

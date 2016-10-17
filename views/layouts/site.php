@@ -53,6 +53,7 @@ AppAsset::register($this);
                             <li class="has-flyout"><a href="contact.html">Contact Page</a></li>
                         </ul>
                     </li>
+                    <li ><a href="<?php echo Url::home()?>site/price">Цены</a></li>
                     <li ><a href="galleries.html">Galleries</a></li>
                     <li ><a href="portfolio.html">Portfolio</a></li>
                 </ul>

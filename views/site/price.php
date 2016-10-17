@@ -8,7 +8,23 @@ use yii\helpers\Url;
 <script type="text/javascript" src="<?php echo Url::home()?>js/price/dragscroll.js"></script>
 
 <div id="gallery_block" class="dragscroll">
-    <div class="block_price"></div>
+    <div class="block_price">
+        <div class="price-gd-top">
+            <h4 style="margin-top:0;">Basic</h4>
+            <h3>$5</h3>
+            <h5>1 month</h5>
+        </div>
+        <div class="price-gd-bottom">
+            <div class="price-list">
+
+
+            </div>
+        </div>
+ 
+    </div>
+    
+    
+    
     <div class="block_price"></div>
     <div class="block_price"></div>
     <div class="block_price"></div>
