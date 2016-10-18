@@ -203,10 +203,10 @@ class SiteController extends Controller
         $model2 = new Order();
         $this->view->params['model2'] = $model2;
 
-        $model = Plan::find() ->all();
+        $models = Plan::find() ->all();
 
         return $this->render('price', [
-            'model' => $model,]);
+            'models' => $models,]);
     }
     
     

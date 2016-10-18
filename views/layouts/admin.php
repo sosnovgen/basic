@@ -32,6 +32,7 @@ AppAsset::register($this);  // $this represents the view object
                 force_br_newlines : true,
                 /*force_br_newlines : false,*/
                 force_p_newlines : false,
+                forced_root_block : false,
 
                 toolbar: 'fontsizeselect | forecolor backcolor | bullist numlist |',
                 fontsize_formats: '8pt 9pt 10pt 11pt 12pt 14pt 16pt 18pt 24pt 36pt',
