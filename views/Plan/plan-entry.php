@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'title')->textInput()->label('Название курса'); ?>
         </div>
         <div class="col-md-6">
-            <?= $form->field($model, 'preview')->fileInput(['class' => 'filestyle', 'data-buttonText'=> 'Выбрать'])->label('Картинка'); ?>
+            <?= $form->field($model, 'preview')->fileInput(['class' => 'filestyle', 'data-buttonText'=> 'Выбрать'],['value' => 'images/button.jpg'])->label('Картинка'); ?>
         </div>
 
 

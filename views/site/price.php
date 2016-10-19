@@ -18,11 +18,8 @@ use yii\helpers\Url;
             </div>
 
             <div class="price-list">
-                
                 <?php echo $model ->content ?>
-
             </div>
-
 
         </div>
     <?php endforeach;?>

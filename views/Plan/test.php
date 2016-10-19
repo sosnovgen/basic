@@ -11,7 +11,10 @@ use yii\widgets\ActiveForm;
 
 
 <?php
-var_dump($model);
+
+echo $model->preview;
+
+
 ?>
 
 

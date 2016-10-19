@@ -120,6 +120,8 @@ class FrontController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $oldFileName = $model->preview;
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             $fileName = UploadedFile::getInstance($model, 'preview');
@@ -134,7 +136,9 @@ class FrontController extends Controller
                 $img->resize(450, 238);
                 $img->save($img_root . $fileName);
             }
-
+            else{
+                $model->preview = $oldFileName;
+            }
             $model->save();
 
             return $this->redirect(['view', 'id' => $model->id]);

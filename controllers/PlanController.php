@@ -101,10 +101,12 @@ class PlanController extends Controller
     public function actionUpdate($id){
 
         $model = $this->findModel($id);
-        
+        $oldFileName = $model->preview;
+
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            
+
             $fileName = UploadedFile::getInstance($model, 'preview');
+
             if ($fileName !== null) {
                 $img_root = 'images/lessons/';
 
@@ -116,7 +118,10 @@ class PlanController extends Controller
                 $img->resize(300, 200);
                 $img->save($img_root . $fileName);
             }
-            
+            else{
+                $model->preview = $oldFileName;
+            }
+
             $model->save();
 
             return $this->redirect(['view', 'id' => $model->id]);
