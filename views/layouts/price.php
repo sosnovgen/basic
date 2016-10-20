@@ -79,7 +79,7 @@ AppAsset::register($this);
 <div class="row">
     <div class="twelve columns">
         <ul id="menu3" class="footer_menu horizontal">
-            <li ><a href="index.html">Home</a></li>
+            <li ><a href="<?php echo Url::home()?>site/index">Home</a></li>
         </ul>
     </div>
 </div>

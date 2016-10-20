@@ -30,7 +30,11 @@ use yii\helpers\Url;
         <div class="col-md-12">
             <div class="update-nag">
                 <div class="update-split" style="background: #<?php echo $colors[$i]; ?>;"><i class="glyphicon"><?php echo $i+1 ?></i></div>
-                <div class="update-text"><?php echo $model ->title ?></div>
+                <div class="update-text"><?php echo $model ->title ?>
+                <span class="glyphicon glyphicon-chevron-right" style="color:#<?php echo $colors[$i]; ?>; top"></span></div>
+                <div class="update-text"><?php echo $model ->duration ?>
+                    <span class="glyphicon glyphicon-chevron-right" style="color:#<?php echo $colors[$i]; ?>; top"></span></div>
+                <div class="update-text" style="font-size: 1.2em; font-weight: bold"><?php echo $model ->cena ?></div>
                 <?php $i = $i + 1; ?>
             </div>
         </div>
