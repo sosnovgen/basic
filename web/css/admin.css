@@ -76,7 +76,13 @@ h1.page-header {
     z-index: 99;
 
 }
-.panel_content{
-    width:200px;
-     height:300px;
+.temp_slider{
+    display:block;
+    /*width:30px;*/
+    /* height:150px;*/
+    position:fixed;
+    right:-250px;
+    top:10%;
+    z-index: 99;
 }
+

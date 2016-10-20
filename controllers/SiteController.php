@@ -205,7 +205,11 @@ class SiteController extends Controller
 
         $models = Plan::find() ->all();
 
+        $colors = array('5CB85C','D9534F','5BC0DE','CC990A','D058DE','131EDE','EBEA1E',
+            '5CB85C','5BC0DE','CC990A','5CB85C','D9534F','5BC0DE','CC990A','D058DE','131EDE',);
+
         return $this->render('price', [
+            'colors' => $colors,
             'models' => $models,]);
     }
     

@@ -68,22 +68,23 @@ AppAsset::register($this);
             <strong>' . Yii::$app ->session ->getFlash('success') .'</strong></div>';}
         ?>
 
-
-
-        <?= $content ?>
-
-        <a data-toggle="modal" href="#myModal"><img src="<?php echo Url::home()?>images/button.jpg" class="panel_slide"></a>
-
-        <div class="row">
-            <div class="twelve columns">
-                <ul id="menu3" class="footer_menu horizontal">
-                    <li ><a href="index.html">Home</a></li>
-                </ul>
-            </div>
-        </div>
-        <script>$('ul#menu3').nav-bar();</script>
     </div>
 </div>
+
+<?= $content ?>
+
+
+<a data-toggle="modal" href="#myModal"><img src="<?php echo Url::home()?>images/button.jpg" class="temp_slider"></a>
+
+<div class="row">
+    <div class="twelve columns">
+        <ul id="menu3" class="footer_menu horizontal">
+            <li ><a href="index.html">Home</a></li>
+        </ul>
+    </div>
+</div>
+
+
 
 <!-- Modal Categories Create -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -98,7 +99,7 @@ AppAsset::register($this);
             <div class="modal-body">
                 <div class="container">
                     <?php $model2 = $this->params['model2']; ?>
-                    
+
                     <?php $form = ActiveForm::begin(
                         [
                             'action' => ['site/create'],
