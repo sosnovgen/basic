@@ -33,7 +33,7 @@ use yii\widgets\ActiveForm;
             '5' => '5',
             '6' => '6',
             '7' => '7',
-            
+
             ])-> label('№ столб.'); ?>
 
         </div>

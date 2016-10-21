@@ -107,7 +107,15 @@ AppAsset::register($this);  // $this represents the view object
                         </ul>
                     </li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#lisp_3"><i class="fa fa-fw fa-list-alt"></i> Подробно<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="lisp_3" class="collapse">
+                            <li>
+                                <a href="<?php echo Url::toRoute('full/view')?>"> Показать все</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo Url::toRoute('full/create')?>"> Добавить новый</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>

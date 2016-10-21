@@ -8,6 +8,13 @@ use yii\db\Expression;
 class Plan extends ActiveRecord
 {
 
+//----------------------------------------------------------------
+    public function getFull()
+    {
+        return $this->hasOne(Full::className(), ['plan_id' => 'id']);
+    }
+
+//----------------------------------------------
     public function rules()
     {
         return [
@@ -22,7 +29,7 @@ class Plan extends ActiveRecord
         ];
     }
     
-    
+//-----------------------------------------------
         public function behaviors()
     {
         return [
