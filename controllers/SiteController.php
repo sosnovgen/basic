@@ -104,10 +104,11 @@ class SiteController extends Controller
 
     }
 
-    
+/*---------------------------------------------------------------------------*/
     
     public function actionLogin()
     {
+        $this -> layout = 'login';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -121,23 +122,10 @@ class SiteController extends Controller
         ]);
     }
 
-    /**
-     * Logout action.
-     *
-     * @return string
-     */
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
+        /* actionLogout -> AdminController.php */
 
-        return $this->goHome();
-    }
-
-    /**
-     * Displays contact page.
-     *
-     * @return string
-     */
+    /*----------------------------------------------------------------------------*/
+ 
     public function actionContact()
     {
         $model = new ContactForm();

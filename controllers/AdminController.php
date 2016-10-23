@@ -12,8 +12,14 @@ class AdminController extends Controller
     
     public function actionIndex()
     {
-        return $this->redirect('plan/view');
+        return $this->redirect('site/login');
 
+    }
+
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+        return $this->goHome();
     }
 
 
