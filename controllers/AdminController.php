@@ -12,6 +12,7 @@ class AdminController extends Controller
     
     public function actionIndex()
     {
+        /*return $this->redirect('plan/view');*/
         return $this->redirect('site/login');
 
     }

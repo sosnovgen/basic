@@ -35,7 +35,7 @@ class PlanController extends Controller
                 $model->preview = $img_root . $fileName;
 
                 $img = Image::make($img_root . $fileName);
-                $img->resize(300, 200);
+                $img->resize(450, 238);
                 $img->save($img_root . $fileName);
             }
 
@@ -71,23 +71,22 @@ class PlanController extends Controller
         ]);
         
         return $this->render('plan-view', ['dataProvider' => $dataProvider,]);
-        
     }
 
     public function actionDelete($id){
 
-        $model = Plan::findOne($id);
+    $model = Plan::findOne($id);
 
-        $fileName = ($model -> preview);
-        //$fileName = mb_substr($fileName,1);
-        if (is_file($fileName))
-        {
-            unlink($fileName);
-        }
-
-        $model -> delete();
-        return $this->redirect('view');
+    $fileName = ($model -> preview);
+    //$fileName = mb_substr($fileName,1);
+    if (is_file($fileName))
+    {
+        unlink($fileName);
     }
+
+    $model -> delete();
+    return $this->redirect('view');
+}
 
     protected function findModel($id)
     {
@@ -108,6 +107,10 @@ class PlanController extends Controller
             $fileName = UploadedFile::getInstance($model, 'preview');
 
             if ($fileName !== null) {
+                if (is_file($oldFileName)){
+                    unlink($oldFileName);
+                }
+
                 $img_root = 'images/lessons/';
 
                 $model->preview = $fileName;
@@ -115,8 +118,9 @@ class PlanController extends Controller
                 $model->preview = $img_root . $fileName;
 
                 $img = Image::make($img_root . $fileName);
-                $img->resize(300, 200);
+                $img->resize(410, 238);
                 $img->save($img_root . $fileName);
+
             }
             else{
                 $model->preview = $oldFileName;

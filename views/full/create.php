@@ -22,6 +22,7 @@ use yii\widgets\ActiveForm;
     </div>
 
 
+    <span class="small pull-right">* Размер шрифта в списке: 10pt. </span><br>
     <span class="small pull-right">* Перенос строки клавиши: Shift + Enter </span>
     <?= $form->field($model, 'content')-> textArea(['rows' => '18']) -> label('Подробное описание'); ?>
 

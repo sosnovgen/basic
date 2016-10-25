@@ -35,10 +35,11 @@ class Order extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'phone', 'curs'], 'required'],
-            [['completed'], 'integer'],
+            ['completed','default', 'value' => 'false'],
+            ['status','default', 'value' => 'Новый'],
             [['created_at'], 'safe'],
             [['content'], 'string', 'max' => 1024],
-            [['name', 'phone', 'curs', 'status'], 'string', 'max' => 255],
+            [['name', 'phone', 'curs'], 'string', 'max' => 255],
         ];
     }
 

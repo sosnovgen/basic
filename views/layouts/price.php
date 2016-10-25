@@ -74,7 +74,7 @@ AppAsset::register($this);
 <?= $content ?>
 
 
-<a data-toggle="modal" href="#myModal"><img src="<?php echo Url::home()?>images/button.jpg" class="temp_slider"></a>
+<a data-toggle="modal" href="#myModal"><img src="<?php echo Url::home()?>images/button.png" class="temp_slider"></a>
 
 <div class="row">
     <div class="twelve columns">

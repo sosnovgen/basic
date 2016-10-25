@@ -11,6 +11,7 @@ use app\models\ContactForm;
 use app\models\Front;
 use app\models\Order;
 use app\models\Plan;
+use yii\helpers\Url;
 
 
 class SiteController extends Controller
@@ -110,12 +111,13 @@ class SiteController extends Controller
     {
         $this -> layout = 'login';
         if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
+            /*return $this->redirect(Yii::$app->urlManager->createUrl('plan/view'));*/
+            return $this->redirect (Url::to(['plan/view']));
         }
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect (Url::to(['plan/view']));;
         }
         return $this->render('login', [
             'model' => $model,
@@ -152,21 +154,18 @@ class SiteController extends Controller
     /*------------ detal information ---------------*/
     public function actionDetal($id)
     {
-
         $model2 = new Order();
         $this->view->params['model2'] = $model2;
         
-        $detal = Front::findOne($id);
-
+        $model = Plan::findOne($id);
         return $this->render('detal',
             [
-                'detal' => $detal,
+                'model' => $model,
             ]);
     }
 
     public function actionCreate()
     {
-
         $seconds = Front::find()
             ->where(['group' => 'one_page'])-> orderBy('priznak')
             ->all();
@@ -194,7 +193,8 @@ class SiteController extends Controller
         $models = Plan::find() ->all();
 
         $colors = array('5CB85C','D9534F','5BC0DE','CC990A','D058DE','131EDE','EBEA1E',
-            '5CB85C','5BC0DE','CC990A','5CB85C','D9534F','5BC0DE','CC990A','D058DE','131EDE',);
+            '5CB85C','5BC0DE','CC990A','5CB85C','D9534F','5BC0DE','CC990A','D058DE','131EDE',
+            '5CB85C','D9534F','5BC0DE','CC990A','D058DE','131EDE','EBEA1E',);
 
         return $this->render('price', [
             'colors' => $colors,

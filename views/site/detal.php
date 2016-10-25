@@ -1,14 +1,33 @@
 <?php
-use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
 ?>
-<h1>Detal</h1>
+<h1><?php echo $model ->title ?> <span class="caption_cena"> ( <?php echo $model ->cena ?> р.) </span></h1>
 
 
 <br>
 
-<p><?php
+
+<div class="#">
+    <div class="col-md-6">
+        <img src="<?php echo Url::home();
+        echo $model->preview ?>" alt=" " class="img-responsive"/>
+        <div class="left_block">
+            Время обучения: <?php echo $model->duration ?>
+        </div>
+        <div class="left_block">
+            <span class="duration"><?php echo $model->content ?></span>
+        </div>
+        <div class="left_block">
+            Экзамен: <?php echo $model->diploma?>
+        </div>
+
+    </div>
 
 
-    var_dump($detal);
+    <div class="col-md-6">
+        <div class="block_main">
+            <?php echo $model ->full ->content ?>
+        </div>
+    </div>
 
-    ?></p>
+</div>

@@ -9,6 +9,7 @@
     width: 100%;
     padding: 80px 0 80px 0;
     background: #e0e0e0;
+    background-image: url("../images/price/banner.png");
     font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
     font-weight: normal;
     /*font-size: 18px;*/
@@ -32,6 +33,7 @@
     display: inline-block;
     font-size: 14px;
     text-align: left;
+    border: solid 1px #e8e8e8;
     background-color: #fff;
     height: 40px;
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
@@ -79,4 +81,31 @@
     padding-top: 11px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+/*----------  detal      ---------*/
+
+.caption_cena{
+    color: #1bae1b;
+    font-weight: bolder;
+    font-size: 0.8em;
+}
+.left_block{
+    font-size: 1.8em;
+    font-weight: normal;
+    font-family: 'Open Sans Condensed',sans-serif;
+    margin: 12px 0 0 0;
+    /*color: #435184;*/
+}
+
+.duration{
+    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    /*line-height: 1.6;*/
+}
+.block_main ul{
+    list-style-position: outside;
+}
+.block_main h2,.block_main h3,
+.block_main h4,.block_main h5{
+    margin-top:0;
 }
