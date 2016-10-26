@@ -58,11 +58,7 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * Displays homepage.
-     *
-     * @return string
-     */
+ /*-----------------  index  -------------------*/
     public function actionIndex()
     {
         $this -> view-> title = 'Neil5Art';
@@ -151,19 +147,6 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    /*------------ detal information ---------------*/
-    public function actionDetal($id)
-    {
-        $model2 = new Order();
-        $this->view->params['model2'] = $model2;
-        
-        $model = Plan::findOne($id);
-        return $this->render('detal',
-            [
-                'model' => $model,
-            ]);
-    }
-
     public function actionCreate()
     {
         $seconds = Front::find()
@@ -185,6 +168,20 @@ class SiteController extends Controller
         }
     }
 
+    /*------------ detal information ---------------*/
+    public function actionDetal($id)
+    {
+        $model2 = new Order();
+        $this->view->params['model2'] = $model2;
+        
+        $model = Plan::findOne($id);
+        return $this->render('detal',
+            [
+                'model' => $model,
+            ]);
+    }
+
+    /*------------ Price ---------------*/
     public function actionPrice()
     {
         $model2 = new Order();
@@ -200,6 +197,18 @@ class SiteController extends Controller
             'colors' => $colors,
             'models' => $models,]);
     }
-    
+
+    /*------------ detal information ---------------*/
+    public function actionChart()
+    {
+        $model2 = new Order();
+        $this->view->params['model2'] = $model2;
+
+        $models = Plan::find() ->all();
+        return $this->render('chart',
+            [
+                'models' => $models,
+            ]);
+    }
     
 }

@@ -15,6 +15,8 @@ AppAsset::register($this);  // $this represents the view object
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
 
+        <link rel="shortcut icon" href="<?php echo Url::home()?>images/icon_logo_16.png" type="image/png">
+
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
 

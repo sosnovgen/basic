@@ -7,14 +7,7 @@ use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
 
-/**
- * This is the model class for table "full".
- *
- * @property integer $id
- * @property integer $plan_id
- * @property string $content
- * @property string $created_at
- */
+
 class Full extends \yii\db\ActiveRecord
 {
     /**

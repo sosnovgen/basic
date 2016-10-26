@@ -20,6 +20,8 @@ AppAsset::register($this);
     <?php Html::csrfMetaTags() ?>
     <?php $this->head() ?>
 
+    <link rel="shortcut icon" href="<?php echo Url::home()?>images/icon_logo_16.png" type="image/png">
+
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="<?php echo Url::home()?>stylesheets/foundation.min.css">
     <link rel="stylesheet" href="<?php echo Url::home()?>stylesheets/main.css">
@@ -43,16 +45,7 @@ AppAsset::register($this);
             <div class="nine columns header_nav">
                 <ul id="menu-header" class="nav-bar horizontal">
                     <li><a href="<?php echo Url::home()?>site/index">Home</a></li>
-                    <li class="has-flyout"> <a href="#">Обучение</a><a href="#" class="flyout-toggle"></a>
-                        <ul class="flyout">
-                            <li class="has-flyout"><a href="blog.html">Методика гель формы</a></li>
-                            <li class="has-flyout"><a href="blog-single.html">Система гелей однофазных</a></li>
-                            <li class="has-flyout"><a href="products-page.html">Методика гель типсы</a></li>
-                            <li class="has-flyout"><a href="product-single.html">Система гелей трехфазная</a></li>
-                            <li class="has-flyout"><a href="pricing-table.html">Pricing Table</a></li>
-                            <li class="has-flyout"><a href="contact.html">Contact Page</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="<?php echo Url::home()?>site/chart">Обучение</a></li>
                     <li ><a href="<?php echo Url::home()?>site/price">Цены</a></li>
                     <li ><a href="galleries.html">Galleries</a></li>
                     <li ><a href="portfolio.html">Portfolio</a></li>

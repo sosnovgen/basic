@@ -109,3 +109,67 @@
 .block_main h4,.block_main h5{
     margin-top:0;
 }
+
+/*-------------- chart ------------------*/
+.outbox{
+    width: 90px;
+    height: 300px;
+    border-right: solid 1px #2db514;
+
+}
+.inbox{
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    white-space: nowrap;
+    margin-bottom: 30px;
+    border: solid 1px #c8c8c8;
+    background-color: #423aff;
+    border-radius:5px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    z-index: 23;
+
+}
+.gorizont_1{
+    width: 540px;
+    height: 20px;
+    border-bottom: solid 1px #46c73c;
+    z-index: 21;
+}
+.gorizont_2{
+    margin-top: 50px ;
+    width: 540px;
+    height: 20px;
+    border-bottom: solid 1px #50c839;
+    z-index: 21;
+}
+.inbox_side_1{
+    float: left;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    white-space: nowrap;
+    margin-bottom: 30px;
+    margin-left: 220px;
+    margin-top: -70px;
+    border: solid 1px #c8c8c8;
+    background-color: #e8e8e8;
+    border-radius:5px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    z-index: 23;
+}
+.inbox_side_2{
+      float: left;
+      width: 180px;
+      height: 40px;
+    line-height: 40px;
+    white-space: nowrap;
+      margin-bottom: 30px;
+      margin-left: 440px;
+      margin-top: -70px;
+      border: solid 1px #c8c8c8;
+      background-color: #e8e8e8;
+    border-radius:5px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+      z-index: 23;
+  }
