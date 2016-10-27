@@ -113,37 +113,49 @@
 /*-------------- chart ------------------*/
 .outbox{
     width: 90px;
-    height: 300px;
-    border-right: solid 1px #2db514;
-
+    height: 360px;
+    border-right: solid 2px #c8c8c8;
 }
-.inbox{
+.outbox_right {
+    width: 100px;
+    height: 400px;
+    border-right: solid 2px #c8c8c8;
+}
+.inbox, .inbox_first{
+    position: relative;
     width: 180px;
     height: 40px;
     line-height: 40px;
     white-space: nowrap;
     margin-bottom: 30px;
     border: solid 1px #c8c8c8;
-    background-color: #423aff;
-    border-radius:5px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
-    z-index: 23;
-
+    background-color: #ffffff;
+}
+.inbox_right,.inbox_right_first{
+    position: relative;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    border: solid 1px #c8c8c8;
+    background-color: #ffffff;
 }
 .gorizont_1{
     width: 540px;
     height: 20px;
-    border-bottom: solid 1px #46c73c;
-    z-index: 21;
+    border-bottom: solid 2px #c8c8c8;
+
 }
 .gorizont_2{
     margin-top: 50px ;
     width: 540px;
     height: 20px;
-    border-bottom: solid 1px #50c839;
-    z-index: 21;
+    border-bottom: solid 2px #c8c8c8;
+
 }
 .inbox_side_1{
+    position: relative;
     float: left;
     width: 180px;
     height: 40px;
@@ -153,13 +165,13 @@
     margin-left: 220px;
     margin-top: -70px;
     border: solid 1px #c8c8c8;
-    background-color: #e8e8e8;
-    border-radius:5px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
-    z-index: 23;
+    background-color: #ffffff;
+
+
 }
 .inbox_side_2{
-      float: left;
+    position: relative;
+    float: left;
       width: 180px;
       height: 40px;
     line-height: 40px;
@@ -168,8 +180,53 @@
       margin-left: 440px;
       margin-top: -70px;
       border: solid 1px #c8c8c8;
-      background-color: #e8e8e8;
-    border-radius:5px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
-      z-index: 23;
-  }
+      background-color: #ffffff;
+}
+.karkas_2{
+    /*margin-top:40px;*/
+    /*width: 100%;*/
+    padding: 20px 40px 20px 40px;
+    background: #e3e8c6;
+    /*background-image: url("../images/chart/pink_web.png");*/
+    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    /*font-size: 18px;*/
+}
+
+.inbox_side_1:before, .inbox_side_2:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid #727272;
+    position: absolute;
+    top: 12px;
+    left: -8px;
+}
+
+.inbox:before{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 6px solid #727272;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    position: absolute;
+    top: -8px;
+    left: 82px;
+}
+.inbox_right:before{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 6px solid #727272;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    position: absolute;
+    top: -8px;
+    left: 92px;
+}
