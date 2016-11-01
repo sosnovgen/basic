@@ -1,8 +1,10 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\StringHelper;
+use yii\widgets\LinkPager;
 ?>
 
+<div class="row">
 <div class="col-md-8">
     <?php foreach ($models as $model): ?>
         <div class="blog_post">
@@ -13,9 +15,8 @@ use yii\helpers\StringHelper;
             <img src="<?php echo Url::home();
             echo $model->preview ?>" alt="" style="width:100%">
             <p><?php echo $model->created_at ?>| Posted by: <a href="#">Admin</a></p>
-            <p class="body_1"><?php echo StringHelper::truncate($model->body, 250, '...') ?><a href="blog-single.html">Continue
-                    Reading &raquo;</a></p>
-        </div>
+            <p class="body_1"><?php echo StringHelper::truncate($model->body, 250, ' ...') ?><a href="#">подробнее &raquo;</a></p>
+        </div><br>
     <?php endforeach; ?>
     <!-- END blog post -->
 </div>
@@ -25,9 +26,20 @@ use yii\helpers\StringHelper;
 
 <div class="col-md-4">
     <div class="heading_dots_grey">
-        <h3><span class="heading_bg">Sidebar</span></h3>
+        <h3><span class="heading_bg">Все статьи</span></h3>
     </div>
     <ul>
-        <li class="#">Nulla tincidunt</li>
+        <?php foreach ($articles as $article): ?>
+        <li  class="artic"><a href="<?php echo Url::toRoute(['site/article', 'id' => $article ->id]) ?>" class="#"><?php echo $article ->title ?></a></li>
+        <?php endforeach; ?>
     </ul>
+</div>
+
+</div>
+
+<div style="width: 50%; margin: 0 auto; text-align: center;">
+<?php echo LinkPager::widget([
+'pagination' => $pages,
+]); ?>
+
 </div>

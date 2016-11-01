@@ -13,6 +13,7 @@ use app\models\Order;
 use app\models\Plan;
 use app\models\Post;
 use yii\helpers\Url;
+use yii\data\Pagination;
 
 
 class SiteController extends Controller
@@ -218,17 +219,33 @@ class SiteController extends Controller
         $model2 = new Order();
         $this->view->params['model2'] = $model2;
         
-        $models = Post::find() ->all();
+        $query = Post::find()->orderBy('id desc');
+
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 2]);
+        $pages->pageSizeParam = false;
+        $models = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
+
+        $articles = Post::find() ->all();
+        
         return $this->render('post',
             [
                 'models' => $models,
+                'pages' => $pages,
+                'articles' => $articles,
             ]); 
+     
+    }
+
+    /*----------- posts   ------------*/
+    public function actionArticle($id){
         
         
         
         
         
     }
-    
     
 }
