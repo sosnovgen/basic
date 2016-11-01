@@ -35,8 +35,8 @@ class Order extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'phone', 'curs'], 'required'],
-            ['completed','default', 'value' => 'false'],
-            ['status','default', 'value' => 'Новый'],
+            ['completed','default', 'value' => 'Не оплатил'],
+            ['status','default', 'value' => 'Кандидат'],
             [['created_at'], 'safe'],
             [['content'], 'string', 'max' => 1024],
             [['name', 'phone', 'curs'], 'string', 'max' => 255],

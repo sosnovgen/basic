@@ -6,6 +6,9 @@ use yii\helpers\Url;
 
 ?>
 
+    <div class="row capture">
+        <h3 class="text-center">Студенты</h3>
+    </div>
 
 <?php
 
@@ -20,16 +23,15 @@ echo GridView::widget([
         'content:text:Текст',
         'completed:text:Принят?',
         'status:text:Статус',
-        'created_at:date:Создано',
+        /*'created_at:date:Создано',*/
+        [
+            'label' => 'Создано',
+            'attribute' => 'created_at',
+            'format' =>  ['date', 'dd.MM.YYYY'],
+            'options' => ['width' => '80'],
+        ],
 
-
-        /* [
-             'attribute' => 'created_at',
-             'header'=>'Создано',
-             'format' =>  ['date', 'dd.MM.YYYY'],
-             'options' => ['width' => '100']
-         ],*/
-
+        
         [
             'class' => 'yii\grid\ActionColumn',
             'header'=>'Действия',

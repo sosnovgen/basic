@@ -3,10 +3,13 @@ use yii\data\ActiveDataProvider;
 use \yii\grid\GridView;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\helpers\StringHelper;
 
 ?>
 
-
+    <div class="row capture">
+        <h3 class="text-center">Уроки</h3>
+    </div>
 <?php
 
     echo GridView::widget([
@@ -26,18 +29,23 @@ use yii\helpers\Url;
             ],
             'title:text:Название',
             'duration:text:Кол.часов',
-            'content:text:Программа обучения',
+            /*'content:text:Программа обучения',*/
+            [
+                'label' => 'Программа обучения',
+                'attribute' => 'content',
+                'value' => function ($data) {
+                    return StringHelper::truncate($data->content, 100);
+                }
+            ],
             'diploma:text:Экзамен/Диплом',
             'cena:text:Стоимость',
-            'created_at:date:Создано',
-
-
-           /* [
+            /*'created_at:date:Создано',*/
+            [
+                'label' => 'Создано',
                 'attribute' => 'created_at',
-                'header'=>'Создано',
                 'format' =>  ['date', 'dd.MM.YYYY'],
-                'options' => ['width' => '100']
-            ],*/
+                'options' => ['width' => '80'],
+            ],
 
             [
                 'class' => 'yii\grid\ActionColumn',

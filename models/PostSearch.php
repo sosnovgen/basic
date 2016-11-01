@@ -19,7 +19,7 @@ class PostSearch extends Post
     {
         return [
             [['id'], 'integer'],
-            [['title', 'context', 'cena'], 'safe'],
+            [['title', 'body', 'priznak'], 'safe'],
         ];
     }
 
@@ -60,11 +60,11 @@ class PostSearch extends Post
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'cena' => $this->cena,
+            'cena' => $this->priznak,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'context', $this->context]);
+            ->andFilterWhere(['like', 'body', $this->body]);
 
         return $dataProvider;
     }

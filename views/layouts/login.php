@@ -43,16 +43,8 @@ AppAsset::register($this);
             <div class="nine columns header_nav">
                 <ul id="menu-header" class="nav-bar horizontal">
                     <li><a href="<?php echo Url::home()?>site/index">Home</a></li>
-                    <li class="has-flyout"> <a href="#">Обучение</a><a href="#" class="flyout-toggle"></a>
-                        <ul class="flyout">
-                            <li class="has-flyout"><a href="blog.html">Методика гель формы</a></li>
-                            <li class="has-flyout"><a href="blog-single.html">Система гелей однофазных</a></li>
-                            <li class="has-flyout"><a href="products-page.html">Методика гель типсы</a></li>
-                            <li class="has-flyout"><a href="product-single.html">Система гелей трехфазная</a></li>
-                            <li class="has-flyout"><a href="pricing-table.html">Pricing Table</a></li>
-                            <li class="has-flyout"><a href="contact.html">Contact Page</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="<?php echo Url::home()?>site/chart">Обучение</a></li>
+                    <li><a href="<?php echo Url::home()?>post/index">Статьи</a></li>
                     <li ><a href="<?php echo Url::home()?>site/price">Цены</a></li>
                     <li ><a href="galleries.html">Galleries</a></li>
                     <li ><a href="portfolio.html">Portfolio</a></li>

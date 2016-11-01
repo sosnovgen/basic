@@ -126,12 +126,20 @@ AppAsset::register($this);  // $this represents the view object
                                 <a href="<?php echo Url::toRoute('order/view')?>"> Показать всех</a>
                             </li>
                             <li>
-                                <a href="<?php echo Url::toRoute('full/create')?>"> Редактировать</a>
+                                <a href="<?php echo Url::toRoute('order/create')?>"> Редактировать</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#lisp_5"><i class="fa fa-fw fa-paper-plane-o"></i> Статьи<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="lisp_5" class="collapse">
+                            <li>
+                                <a href="<?php echo Url::toRoute('post/index')?>"> Показать все</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo Url::toRoute('post/create')?>"> Добавить новую</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>

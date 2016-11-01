@@ -16,17 +16,22 @@ class OrderController extends \yii\web\Controller
     public function actionCreate()
     {
         $model = new Order();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            // данные в $model удачно проверены
-            $model ->save();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-            Yii::$app->session->setFlash('success', 'Запись сохранена!');
-            return $this->render('site/index',['model' => $model] );
-        }
-        else {
-            // Error
-            Yii::$app->session->setFlash('error', 'Ошибка! Проверьте правильность заполнения формы.');
-            return $this->render('site/index', ['model' => $model]);
+            $model->save();
+
+            $dataProvider = new ActiveDataProvider([
+                'query' => Order::find(),
+                'pagination' => [
+                    'pageSize' => 20,
+                ],
+            ]);
+
+            return $this->redirect('view');
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
         }
     }
 
@@ -39,8 +44,25 @@ class OrderController extends \yii\web\Controller
             ],
         ]);
 
-        return $this->render('view-order', ['dataProvider' => $dataProvider,]);
+        return $this->render('view', ['dataProvider' => $dataProvider,]);
 
+    }
+
+    public function actionUpdate($id){
+
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+
+            $model->save();
+
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+
+            ]);
+        }
     }
 
     public function actionDelete($id)

@@ -11,6 +11,7 @@ use app\models\ContactForm;
 use app\models\Front;
 use app\models\Order;
 use app\models\Plan;
+use app\models\Post;
 use yii\helpers\Url;
 
 
@@ -210,5 +211,24 @@ class SiteController extends Controller
                 'models' => $models,
             ]);
     }
+
+    /*----------- posts   ------------*/
+    public function actionPost(){
+        
+        $model2 = new Order();
+        $this->view->params['model2'] = $model2;
+        
+        $models = Post::find() ->all();
+        return $this->render('post',
+            [
+                'models' => $models,
+            ]); 
+        
+        
+        
+        
+        
+    }
+    
     
 }

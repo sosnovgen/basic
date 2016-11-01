@@ -3,9 +3,14 @@ use yii\data\ActiveDataProvider;
 use \yii\grid\GridView;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\helpers\StringHelper;
 
 ?>
 
+    <div class="row capture">
+        <h3 class="text-center">Подробное описание курса</h3>
+    </div>
+<br>
 
 <?php
 
@@ -15,8 +20,22 @@ echo GridView::widget([
         /*['class' => 'yii\grid\SerialColumn'],*/
         // Вариант с возможностью сортировки по полю
         'plan.title:text:Курс',
-        'content:text:Программа обучения',
-        'created_at:date:Создано',
+        /*'content:text:Программа обучения',*/
+        [
+            'label' => 'Программа обучения',
+            'attribute' => 'content',
+            'value' => function ($data) {
+                return StringHelper::truncate($data->content, 100);
+            }
+        ],
+
+        /*'created_at:date:Создано',*/
+        [
+            'label' => 'Создано',
+            'attribute' => 'created_at',
+            'format' =>  ['date', 'dd.MM.YYYY'],
+            'options' => ['width' => '80'],
+        ],
 
         [
             'class' => 'yii\grid\ActionColumn',

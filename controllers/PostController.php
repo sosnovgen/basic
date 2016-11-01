@@ -8,15 +8,19 @@ use app\models\PostSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\data\ActiveDataProvider;
+use yii\web\UploadedFile;
+// import the Intervention Image Manager Class
+use Intervention\Image\ImageManagerStatic as Image;
 
 /**
  * PostController implements the CRUD actions for Post model.
  */
 class PostController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
+
+    public $layout = 'admin';
+    
     public function behaviors()
     {
         return [
@@ -44,11 +48,7 @@ class PostController extends Controller
         ]);
     }
 
-    /**
-     * Displays a single Post model.
-     * @param integer $id
-     * @return mixed
-     */
+ 
     public function actionView($id)
     {
         return $this->render('view', [
@@ -63,10 +63,38 @@ class PostController extends Controller
      */
     public function actionCreate()
     {
+        // configure with favored image driver (gd by default)
+        Image::configure(array('driver' => 'GD'));
+
         $model = new Post();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+
+            $fileName = UploadedFile::getInstance($model, 'preview');
+
+            if ($fileName !== null) {
+                $img_root = 'images/posts/';
+
+                $model->preview = $fileName;
+                $model->preview->saveAs($img_root . $fileName);
+                $model->preview = $img_root . $fileName;
+
+
+                $img = Image::make($img_root . $fileName);
+                $img->resize(450, 238);
+                $img->save($img_root . $fileName);
+            }
+            $model->save();
+
+
+            $dataProvider = new ActiveDataProvider([
+                'query' => Post::find(),
+                'pagination' => [
+                    'pageSize' => 20,
+                ],
+            ]);
+
+            return $this->render('index', ['model' => $model, 'dataProvider' => $dataProvider,]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -83,36 +111,53 @@ class PostController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $oldFileName = $model->preview;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+
+            $fileName = UploadedFile::getInstance($model, 'preview');
+            if ($fileName !== null) {
+                $img_root = 'images/posts/';
+
+                $model->preview = $fileName;
+                $model->preview->saveAs($img_root . $fileName);
+                $model->preview = $img_root . $fileName;
+
+                $img = Image::make($img_root . $fileName);
+                $img->resize(450, 238);
+                $img->save($img_root . $fileName);
+            }
+            else{
+                $model->preview = $oldFileName;
+            }
+            $model->save();
+
+            return $this->redirect(['index', 'id' => $model->id]);
         } else {
-            return $this->render('update', [
+            return $this->render('create', [
                 'model' => $model,
             ]);
         }
     }
 
-    /**
-     * Deletes an existing Post model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     */
+ 
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = Post::findOne($id);
 
-        return $this->redirect(['index']);
+        $fileName = ($model -> preview);
+        //$fileName = mb_substr($fileName,1);
+        if (is_file($fileName))
+        {
+            unlink($fileName);
+        }
+
+        $model -> delete();
+
+        return $this->redirect('index');
     }
 
-    /**
-     * Finds the Post model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Post the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+
     protected function findModel($id)
     {
         if (($model = Post::findOne($id)) !== null) {

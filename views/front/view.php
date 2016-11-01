@@ -3,9 +3,13 @@ use yii\data\ActiveDataProvider;
 use \yii\grid\GridView;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\helpers\StringHelper;
 
 ?>
 
+    <div class="row capture">
+        <h3 class="text-center">Главная страница</h3>
+    </div>
 
 <?php
 echo GridView::widget([
@@ -24,18 +28,23 @@ echo GridView::widget([
             },
         ],
         'title:text:Заголовок',
-        'content:text:Текст',
+        /*'content:text:Текст',*/
+        [
+            'label' => 'Текст',
+            'attribute' => 'content',
+            'value' => function ($data) {
+                return StringHelper::truncate($data->content, 100);
+            }
+        ],
         'group:text:Группа',
         'priznak:text:№ столбика',
-        'created_at:date:Создано',
-
-
-        /* [
-             'attribute' => 'created_at',
-             'header'=>'Создано',
-             'format' =>  ['date', 'dd.MM.YYYY'],
-             'options' => ['width' => '100']
-         ],*/
+        /*'created_at:date:Создано',*/
+        [
+            'label' => 'Создано',
+            'attribute' => 'created_at',
+            'format' =>  ['date', 'dd.MM.YYYY'],
+            'options' => ['width' => '80'],
+        ],
 
         [
             'class' => 'yii\grid\ActionColumn',

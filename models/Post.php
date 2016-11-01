@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "post".
@@ -28,24 +30,27 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'title', 'context', 'cena'], 'required'],
-            [['id'], 'integer'],
-            [['context'], 'string'],
-            [['cena'], 'safe'],
-            [['title'], 'string', 'max' => 100],
-        ];
+
+            [['title'], 'required'],
+            [['preview'], 'file'],
+            [['body'], 'string'],
+            [['priznak'], 'string'],
+            [['created_at'], 'safe'],
+         ];
     }
 
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
+    public function behaviors()
     {
         return [
-            'id' => 'ID',
-            'title' => 'Title',
-            'context' => 'Context',
-            'cena' => 'Cena',
+            [
+                'class' => TimestampBehavior::className(),
+                'createdAtAttribute' => 'created_at',
+                'updatedAtAttribute' => false,
+                'value' => new Expression('NOW()'),
+            ],
         ];
     }
 }
