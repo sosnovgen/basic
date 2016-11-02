@@ -46,9 +46,11 @@ AppAsset::register($this);
                 <ul id="menu-header" class="nav-bar horizontal">
                     <li><a href="<?php echo Url::home()?>site/index">Home</a></li>
                     <li><a href="<?php echo Url::home()?>site/chart">Обучение</a></li>
+                    <li><a href="<?php echo Url::home()?>site/post">Статьи</a></li>
                     <li ><a href="<?php echo Url::home()?>site/price">Цены</a></li>
-                    <li ><a href="galleries.html">Galleries</a></li>
-                    <li ><a href="portfolio.html">Portfolio</a></li>
+                    <li ><a href="<?php echo Url::home()?>site/contact">Контакты</a></li>
+                    <li ><a href="<?php echo Url::home()?>site/about">О нас</a></li>
+                    
                 </ul>
                 <script>$('ul#menu-header').nav-bar();</script>
             </div>

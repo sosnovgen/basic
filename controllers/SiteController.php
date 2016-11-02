@@ -63,7 +63,7 @@ class SiteController extends Controller
  /*-----------------  index  -------------------*/
     public function actionIndex()
     {
-        $this -> view-> title = 'Neil5Art';
+        $this -> view-> title = 'школа обучения маникюра';
         $this -> view -> registerMetaTag([
             'name' => 'description',
             'content' => 'школа обучения маникюра'
@@ -128,24 +128,18 @@ class SiteController extends Controller
  
     public function actionContact()
     {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
+        $model2 = new Order();
+        $this->view->params['model2'] = $model2;
 
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
+        return $this->render('contact');
     }
 
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
+  /*----------------------------------------------------------*/
     public function actionAbout()
     {
+        $model2 = new Order();
+        $this->view->params['model2'] = $model2;
+        
         return $this->render('about');
     }
 
@@ -239,13 +233,20 @@ class SiteController extends Controller
      
     }
 
-    /*----------- posts   ------------*/
+    /*-------------- post -----------------*/
     public function actionArticle($id){
+
+        $model2 = new Order();
+        $this->view->params['model2'] = $model2;
+
+        $model = Post::findOne($id);
         
-        
-        
-        
-        
+        return $this->render('article',
+            [
+                'model' => $model,
+                
+            ]);
     }
+    
     
 }

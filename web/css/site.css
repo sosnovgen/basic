@@ -102,12 +102,18 @@
     font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
     /*line-height: 1.6;*/
 }
+.block_main{
+    font-size: 1.8em;
+    font-weight: normal;
+    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+}
 .block_main ul{
     list-style-position: outside;
 }
 .block_main h2,.block_main h3,
 .block_main h4,.block_main h5{
     margin-top:0;
+    font-family: 'Open Sans Condensed',sans-serif;
 }
 
 /*-------------- chart ------------------*/
@@ -238,6 +244,10 @@
 p .body_1{
     font-style: normal;
 }
-.artic a{
+
+.article a{
     color: #000000;
+}
+.about{
+    margin: 0 40px 0 0;
 }

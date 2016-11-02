@@ -1,18 +1,41 @@
 <?php
-
-/* @var $this yii\web\View */
-
 use yii\helpers\Html;
+use yii\helpers\Url;
 
-$this->title = 'About';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'О нас';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'школа обучения маникюра'
+]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'методика гель типсы'
+]);
 ?>
-<div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
+<div style="margin-top: 50px;">
+    <div class="row">
 
-    <p>
-        This is the About page. You may modify the following file to customize its content:
-    </p>
+        <div class="col-md-6">
+            <div class="about">
+                <h2>О нас</h2>
+                <p>
+                    Мы - практикующие мастера! И мы точно знаем, что должен уметь мастер!
+                    Наши преподаватели имеют высшее образование и опыт ведения курсов,
+                    они помогут вам в освоении нужной профессии.</p>
+                <p>    К нашим несомненным преимуществам относится также возможность
+                    выбора удобного для вас времени занятий, обучение в мини-группах и
+                    практичная схема оплаты с рассрочкой по месяцам.
+                </p>
 
-    <code><?= __FILE__ ?></code>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="img_about">
+                <img src="<?php echo Url::home()?>images/about/abby.jpg" class="img-responsive"/>
+            </div>
+        </div>
+
+    </div>
 </div>
+<br>

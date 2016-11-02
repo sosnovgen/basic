@@ -3,9 +3,7 @@ use yii\helpers\Url;
 ?>
 <h1><?php echo $model ->title ?> <span class="caption_cena"> ( <?php echo $model ->cena ?> р.) </span></h1>
 
-
 <br>
-
 
 <div class="#">
     <div class="col-md-6">
@@ -24,7 +22,7 @@ use yii\helpers\Url;
     </div>
 
 
-    <div class="col-md-6">
+    <div class="col-md-6" style="padding-left: 50px;">
         <div class="block_main">
             <?php echo $model ->full ->content ?>
         </div>
