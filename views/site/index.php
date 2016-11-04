@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
     <div class="three columns">
         <a href="<?php
         $t8 = ArrayHelper::getValue($seconds, '0.id');
-        echo Url::toRoute(['site/detal', 'id' => $t8])
+        echo Url::toRoute(['site/front', 'id' => $t8])
         ?>">
 
             <h3><?php echo ArrayHelper::getValue($seconds, '0.title'); ?></h3>
@@ -42,7 +42,7 @@ use yii\widgets\ActiveForm;
     <div class="three columns">
         <a href="<?php
         $t8 = ArrayHelper::getValue($seconds, '1.id');
-        echo Url::toRoute(['site/detal', 'id' => $t8])
+        echo Url::toRoute(['site/front', 'id' => $t8])
         ?>">
 
             <h3><?php echo ArrayHelper::getValue($seconds, '1.title'); ?></h3>
@@ -59,7 +59,7 @@ use yii\widgets\ActiveForm;
 
         <a href="<?php
         $t8 = ArrayHelper::getValue($seconds, '2.id');
-        echo Url::toRoute(['site/detal', 'id' => $t8])
+        echo Url::toRoute(['site/front', 'id' => $t8])
         ?>">
 
             <h3><?php echo ArrayHelper::getValue($seconds, '2.title'); ?></h3>
@@ -75,7 +75,7 @@ use yii\widgets\ActiveForm;
 
         <a href="<?php
         $t8 = ArrayHelper::getValue($seconds, '3.id');
-        echo Url::toRoute(['site/detal', 'id' => $t8])
+        echo Url::toRoute(['site/front', 'id' => $t8])
         ?>">
 
             <h3><?php echo ArrayHelper::getValue($seconds, '3.title'); ?></h3>
@@ -98,7 +98,7 @@ use yii\widgets\ActiveForm;
 
         <a href="<?php
         $t8 = ArrayHelper::getValue($seconds, '4.id');
-        echo Url::toRoute(['site/detal', 'id' => $t8])
+        echo Url::toRoute(['site/front', 'id' => $t8])
         ?>">
             <img src="<?php echo Url::home(); echo ArrayHelper::getValue($seconds, '4.preview'); ?>" alt="">
             <h3><?php echo ArrayHelper::getValue($seconds, '4.title'); ?></h3>
@@ -115,7 +115,7 @@ use yii\widgets\ActiveForm;
 
         <a href="<?php
         $t8 = ArrayHelper::getValue($seconds, '6.id');
-        echo Url::toRoute(['site/detal', 'id' => $t8])
+        echo Url::toRoute(['site/front', 'id' => $t8])
         ?>">
             <img src="<?php echo Url::home(); echo ArrayHelper::getValue($seconds, '5.preview'); ?>" alt="">
             <h3><?php echo ArrayHelper::getValue($seconds, '5.title'); ?></h3>
@@ -132,7 +132,7 @@ use yii\widgets\ActiveForm;
 
         <a href="<?php
         $t8 = ArrayHelper::getValue($seconds, '6.id');
-        echo Url::toRoute(['site/detal', 'id' => $t8])
+        echo Url::toRoute(['site/front', 'id' => $t8])
         ?>">
             <img src="<?php echo Url::home(); echo ArrayHelper::getValue($seconds, '6.preview'); ?>" alt="">
             <h3><?php echo ArrayHelper::getValue($seconds, '6.title'); ?></h3>

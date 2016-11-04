@@ -97,11 +97,22 @@
     margin: 12px 0 0 0;
     /*color: #435184;*/
 }
+.left_block_front p{
+    font-size: 1em;
+    margin: 0px 0 0 14px;
+}
 
 .duration{
     font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
     /*line-height: 1.6;*/
 }
+.text_12{
+    font-size: 13px;
+    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    margin-bottom: 17px;
+}
+
 .block_main{
     font-size: 1.8em;
     font-weight: normal;

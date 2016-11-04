@@ -177,6 +177,20 @@ class SiteController extends Controller
             ]);
     }
 
+    /*------------ detal information ---------------*/
+    public function actionFront($id)
+    {
+        $model2 = new Order();
+        $this->view->params['model2'] = $model2;
+
+        $model = Front::findOne($id);
+        return $this->render('front',
+            [
+                'model' => $model,
+            ]);
+    }
+    
+
     /*------------ Price ---------------*/
     public function actionPrice()
     {
@@ -194,7 +208,7 @@ class SiteController extends Controller
             'models' => $models,]);
     }
 
-    /*------------ detal information ---------------*/
+    /*--------------- detal information ---------------*/
     public function actionChart()
     {
         $model2 = new Order();
