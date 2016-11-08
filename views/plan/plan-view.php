@@ -10,6 +10,9 @@ use yii\helpers\StringHelper;
     <div class="row capture">
         <h3 class="text-center">Уроки</h3>
     </div>
+
+    <div class="table-responsive">
+
 <?php
 
     echo GridView::widget([
@@ -71,3 +74,4 @@ use yii\helpers\StringHelper;
     ]);
 
 ?>
+    </div>

@@ -11,6 +11,8 @@ use yii\helpers\StringHelper;
         <h3 class="text-center">Главная страница</h3>
     </div>
 
+<div class="table-responsive">
+
 <?php
 echo GridView::widget([
     'dataProvider' => $dataProvider,
@@ -70,3 +72,4 @@ echo GridView::widget([
 ]);
 
 ?>
+</div>

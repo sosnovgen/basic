@@ -39,6 +39,7 @@ class OrderController extends \yii\web\Controller
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Order::find(),
+            'sort'=> ['defaultOrder' => ['created_at'=>SORT_DESC]],
             'pagination' => [
                 'pageSize' => 20,
             ],

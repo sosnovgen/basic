@@ -12,6 +12,8 @@ use yii\helpers\Url;
         <h3 class="text-center">Статьи</h3>
     </div>
 
+    <div class="table-responsive">
+
 <?php
 
 echo GridView::widget([
@@ -71,3 +73,4 @@ echo GridView::widget([
 ]);
 
 ?>
+        </div>

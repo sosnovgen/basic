@@ -12,6 +12,8 @@ use yii\helpers\StringHelper;
     </div>
 <br>
 
+    <div class="table-responsive">
+
 <?php
 
 echo GridView::widget([
@@ -61,3 +63,4 @@ echo GridView::widget([
 ]);
 
 ?>
+        </div>
