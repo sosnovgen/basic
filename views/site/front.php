@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Url;
 ?>
-<h1><?php echo $model ->title ?> </h1>
+<h3 style="padding-left: 20px"><?php echo $model ->title ?> </h3>
 
 <br>
 

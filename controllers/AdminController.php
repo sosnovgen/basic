@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use yii\web\Controller;
+use yii\helpers\Url;
 
 class AdminController extends Controller
 {
@@ -12,7 +13,7 @@ class AdminController extends Controller
     
     public function actionIndex()
     {
-        /*return $this->redirect('plan/view');*/
+        /*return $this->redirect (Url::to(['plan/view']));*/
         return $this->redirect('site/login');
 
     }

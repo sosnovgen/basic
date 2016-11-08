@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Url;
 ?>
-<h1><?php echo $model ->title ?> <span class="caption_cena"> ( <?php echo $model ->cena ?> р.) </span></h1>
+<h3 style="padding-left: 20px"><?php echo $model ->title ?> <span class="caption_cena"> ( <?php echo $model ->cena ?> р.) </span></h3>
 
 <br>
 
@@ -18,7 +18,7 @@ use yii\helpers\Url;
         <div class="left_block">
             Экзамен: <?php echo $model->diploma?>
         </div>
-
+    <br>
     </div>
 
 

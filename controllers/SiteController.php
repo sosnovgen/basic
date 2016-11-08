@@ -66,11 +66,11 @@ class SiteController extends Controller
         $this -> view-> title = 'школа обучения маникюра';
         $this -> view -> registerMetaTag([
             'name' => 'description',
-            'content' => 'школа обучения маникюра'
+            'content' => 'школа обучения маникюра гель наращивание шугаринг'
         ]);
         $this -> view -> registerMetaTag([
             'name' => 'keywords',
-            'content' => 'методика гель типсы'
+            'content' => 'шугаринг гель типсы'
         ]);
 
         /*second row*/

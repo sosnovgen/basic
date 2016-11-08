@@ -2,14 +2,14 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = 'О нас';
+$this->title = 'neil5art';
 $this->registerMetaTag([
     'name' => 'description',
-    'content' => 'школа обучения маникюра'
+    'content' => 'школа обучения маникюра рисунки гелями'
 ]);
 $this->registerMetaTag([
     'name' => 'keywords',
-    'content' => 'методика гель типсы'
+    'content' => 'методика гель типсы перманентный макияж'
 ]);
 ?>
 <div style="margin-top: 50px;">

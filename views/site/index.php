@@ -6,17 +6,17 @@ use yii\widgets\ActiveForm;
 ?>
 
 
-<div class="show-for-large-up">
+<div class="#">
     <div class="row">
         <div class="twelve columns">
             <div id="featured"><img src="<?php echo Url::home()?>images/demo1.jpg" alt=""> <img src="<?php echo Url::home()?>images/demo2.jpg" alt=""> <img src="<?php echo Url::home()?>images/demo3.jpg" alt=""></div>
         </div>
     </div>
 </div>
-<div class="row hide-for-small">
+<div class="row">
     <div class="twelve columns">
         <div class="heading_dots">
-            <h1 class="heading_supersize"><span class="heading_center_bg">Добро пожаловать!</span></h1>
+            <h1 class="heading_supersize"><span class="heading_center_bg">Школа красоты</span></h1>
         </div>
     </div>
 </div>

@@ -54,7 +54,7 @@ AppAsset::register($this);
                 </ul>
                 <script>$('ul#menu-header').nav-bar();</script>
             </div>
-            <div class="three columns header_logo"> <img src="<?php echo Url::home()?>images/logo.png" class="hide-for-small" alt=""> </div>
+            <div class="three columns header_logo"> <img src="<?php echo Url::home()?>images/logo.png" class="logo_hide" alt=""> </div>
         </div>
         <!-- END Header -->
 

@@ -1,9 +1,20 @@
 <?php
-use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 ?>
 
 <?php $this->context->layout = 'price'; ?>
+
+<?php
+$this->title = 'neil5art';
+$this->registerMetaTag([
+'name' => 'description',
+'content' => 'школа обучения маникюра рисунки гелями'
+]);
+$this->registerMetaTag([
+'name' => 'keywords',
+'content' => 'методика гель типсы перманентный макияж'
+]);
+?>
 
 
 <h1 style="margin-left: 20%;">Price</h1>
@@ -33,5 +44,5 @@ use yii\helpers\Url;
     </div>
 </div>
 </div>
-</div>
+
 

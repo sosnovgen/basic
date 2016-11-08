@@ -1,6 +1,10 @@
 #toper{
     background-color: white;
 }
+.heading_supersize{
+    font-size: 3em !important
+}
+
 
 /*-------- strip -------------*/
 
@@ -201,7 +205,7 @@
 }
 .karkas_2{
     /*margin-top:40px;*/
-    /*width: 100%;*/
+    width: 100%;
     padding: 20px 40px 20px 40px;
     background: #e3e8c6;
     /*background-image: url("../images/chart/pink_web.png");*/
@@ -261,4 +265,41 @@ p .body_1{
 }
 .about{
     margin: 0 40px 0 0;
+}
+
+/*-------------  media   --------------*/
+.karkas_3{
+    margin-top:10px;
+    width: 100%;
+    padding: 80px 0 80px 0;
+    background: #f6f6f6;
+    /*background-image: url("../images/price/banner.png");*/
+    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+}
+
+@media only screen and (max-width: 1000px) {
+    .karkas_2{display: none !important;}
+
+}
+
+@media only screen and (max-width: 1000px){
+    /*.karkas_3{display: block !important;}*/
+    .nav-bar > li > a{
+        font-size: 1.4em !important;}
+    .heading_supersize{
+        font-size: 2.2em !important
+    }
+}
+
+.logo_hide{
+    display: block;
+}
+
+@media only screen and (max-width: 1000px){
+    .logo_hide{
+        position: absolute;
+        top: -40px;
+    right: 10px;
+    }
 }
