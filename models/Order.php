@@ -6,18 +6,7 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
 
-/**
- * This is the model class for table "order".
- *
- * @property integer $id
- * @property string $name
- * @property string $phone
- * @property string $curs
- * @property string $content
- * @property integer $completed
- * @property string $status
- * @property string $created_at
- */
+
 class Order extends \yii\db\ActiveRecord
 {
     /**

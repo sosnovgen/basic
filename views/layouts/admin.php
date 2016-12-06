@@ -62,7 +62,7 @@ AppAsset::register($this);  // $this represents the view object
                 <a class="navbar-brand" href="<?php echo Url::toRoute('site/index')?>">Home</a>
             </div>
             <!-- Top Menu Items -->
-            
+
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
@@ -121,7 +121,7 @@ AppAsset::register($this);  // $this represents the view object
                             </li>
                         </ul>
                     </li>
- 
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -137,9 +137,9 @@ AppAsset::register($this);  // $this represents the view object
             </div>
         </div>
         
-        </div>
+    </div>
 
     <?php $this->endBody() ?>
     </body>
-    </html>
+</html>
 <?php $this->endPage() ?>

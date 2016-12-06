@@ -6,18 +6,7 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
 
-/**
- * This is the model class for table "front".
- *
- * @property integer $id
- * @property string $title
- * @property string $preview
- * @property string $group
- * @property string $content
- * @property string $priznak
- * @property double $cena
- * @property string $created_at
- */
+
 class Front extends \yii\db\ActiveRecord
 {
     /**

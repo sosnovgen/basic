@@ -25,7 +25,6 @@ class Plan extends ActiveRecord
             [['diploma'], 'string'],
             [['cena'], 'string'],
             
-
         ];
     }
     

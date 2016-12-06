@@ -86,32 +86,32 @@ AppAsset::register($this);
     <div class="modal-dialog">
 
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class="modal-content" style="padding: 0 5% 0 5%">
+
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Записаться на курс</h4>
             </div>
             <div class="modal-body">
-                <div class="container">
-                    <?php $model2 = $this->params['model2']; ?>
 
-                    <?php $form = ActiveForm::begin(
-                        [
-                            'action' => ['site/create'],
-                            'options' => ['method' => 'post'],
-                        ]
-                    ); ?>
 
-                    <div class="col-xs-4">
-                        <?= $form->field($model2, 'name')->textInput()->label('Имя'); ?>
-                        <?= $form->field($model2, 'phone')->textInput()->label('Телефон'); ?>
-                        <?= $form->field($model2, 'curs')->textInput()->label('Название курса'); ?>
-                        <?= $form->field($model2, 'content')-> textArea(['rows' => '6']) -> label('Текст'); ?>
+                <?php $model2 = $this->params['model2']; ?>
 
-                        <br>
+                <?php $form = ActiveForm::begin(
+                    [
+                        'action' => ['site/create'],
+                        'options' => ['method' => 'post'],
+                    ]
+                ); ?>
 
-                    </div>
-                </div>
+
+                <?= $form->field($model2, 'name')->textInput()->label('Имя'); ?>
+                <?= $form->field($model2, 'phone')->textInput()->label('Телефон'); ?>
+                <?= $form->field($model2, 'curs')->textInput()->label('Название курса'); ?>
+                <?= $form->field($model2, 'content')-> textArea(['rows' => '6']) -> label('Текст'); ?>
+
+                <br>
+
             </div>
             <br>
 
@@ -125,7 +125,6 @@ AppAsset::register($this);
 
     </div>
 </div>
-
 
 <!-- end page wrap) -->
 <!-- Included JS Files (Compressed) -->

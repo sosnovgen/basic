@@ -73,6 +73,7 @@ class PlanController extends Controller
         return $this->render('plan-view', ['dataProvider' => $dataProvider,]);
     }
 
+
     public function actionDelete($id){
 
     $model = Plan::findOne($id);
@@ -88,6 +89,7 @@ class PlanController extends Controller
     return $this->redirect('view');
 }
 
+    /*---------------------------------------------------------*/
     protected function findModel($id)
     {
         if (($model = Plan::findOne($id)) !== null) {
@@ -97,6 +99,7 @@ class PlanController extends Controller
         }
     }
 
+    /*---------------------------------------------------------------------*/
     public function actionUpdate($id){
 
         $model = $this->findModel($id);
@@ -136,6 +139,10 @@ class PlanController extends Controller
         }
     }
 
+    public function actionStart()
+    {
+        return $this->render('start');
 
+    }
     
 }

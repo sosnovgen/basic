@@ -110,12 +110,12 @@ class SiteController extends Controller
         $this -> layout = 'login';
         if (!Yii::$app->user->isGuest) {
             /*return $this->redirect(Yii::$app->urlManager->createUrl('plan/view'));*/
-            return $this->redirect (Url::to(['plan/view']));
+            return $this->redirect (Url::to(['plan/start']));
         }
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect (Url::to(['plan/view']));;
+            return $this->redirect (Url::to(['plan/start']));;
         }
         return $this->render('login', [
             'model' => $model,
@@ -261,6 +261,6 @@ class SiteController extends Controller
                 
             ]);
     }
-    
-    
+
+
 }

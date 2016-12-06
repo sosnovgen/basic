@@ -9,8 +9,8 @@ use yii\helpers\Url;
 class AdminController extends Controller
 {
     //public $layout = 'admin';
+
     public $layout = 'admin';
-    
     public function actionIndex()
     {
         /*return $this->redirect (Url::to(['plan/view']));*/

@@ -33,9 +33,6 @@ $(document).ready(function(){
     $( function() {
         $( "#gallery_block" ).draggable();
     } );
-
-
-
     
     
 });
